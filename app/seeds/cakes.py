@@ -5,7 +5,7 @@ def seed_cakes():
   
     cake1 = Cake(
         name = "Single Letter Cake",
-        category = "letter",
+        category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 89,
         mediumPrice = 130,
@@ -15,7 +15,7 @@ def seed_cakes():
 
     cake2 = Cake(
         name = "Single Letter Cake",
-        category = "letter",
+        category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 89,
         mediumPrice = 130,
@@ -26,7 +26,7 @@ def seed_cakes():
 
     cake3 = Cake(
         name = "Single Letter Cake",
-        category = "letter",
+        category = "lettesr",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 89,
         mediumPrice = 130,
@@ -36,7 +36,7 @@ def seed_cakes():
 
     cake4 = Cake(
         name = "Double Letters Cake",
-        category = "letter",
+        category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 95,
         mediumPrice = 135,
@@ -46,7 +46,7 @@ def seed_cakes():
 
     cake5 = Cake(
         name = "Double Letters Cake",
-        category = "letter",
+        category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 95,
         mediumPrice = 135,
@@ -56,7 +56,7 @@ def seed_cakes():
 
     cake6 = Cake(
         name = "Three letters Cake",
-        category = "letter",
+        category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 110,
         mediumPrice = 160,
@@ -66,7 +66,7 @@ def seed_cakes():
 
     cake7 = Cake(
         name = "Three letters Cake",
-        category = "letter",
+        category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 110,
         mediumPrice = 160,
@@ -76,7 +76,7 @@ def seed_cakes():
 
     cake8 = Cake(
         name = "Three letters Cake",
-        category = "letter",
+        category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 110,
         mediumPrice = 160,
@@ -86,7 +86,7 @@ def seed_cakes():
 
     cake9 = Cake(
         name = "Single Number Cake",
-        category = "number",
+        category = "numbers",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 85,
         mediumPrice = 130,
@@ -96,7 +96,7 @@ def seed_cakes():
 
     cake10 = Cake(
         name = "Single Number Cake",
-        category = "number",
+        category = "numbers",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 85,
         mediumPrice = 130,
@@ -106,7 +106,7 @@ def seed_cakes():
 
     cake11 = Cake(
         name = "Single Number Cake",
-        category = "number",
+        category = "numbers",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 85,
         mediumPrice = 130,
@@ -116,7 +116,7 @@ def seed_cakes():
 
     cake12 = Cake(
         name = "Single Number Cake",
-        category = "number",
+        category = "numbers",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 85,
         mediumPrice = 130,
@@ -126,7 +126,7 @@ def seed_cakes():
 
     cake13 = Cake(
         name = "Double Number Cake",
-        category = "number",
+        category = "numbers",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 85,
         mediumPrice = 130,
@@ -136,7 +136,7 @@ def seed_cakes():
 
     cake14 = Cake(
         name = "Double Number Cake",
-        category = "number",
+        category = "numbers",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 85,
         mediumPrice = 130,
@@ -146,7 +146,7 @@ def seed_cakes():
 
     cake15 = Cake(
         name = "Crown Shape Cake",
-        category = "shape",
+        category = "shapes",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 85,
         mediumPrice = 130,
@@ -156,7 +156,7 @@ def seed_cakes():
 
     cake16 = Cake(
         name = "Butterfly Shape Cake",
-        category = "shape",
+        category = "shapes",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 85,
         mediumPrice = 130,
@@ -166,7 +166,7 @@ def seed_cakes():
 
     cake17 = Cake(
         name = "Pineapple Shape Cake",
-        category = "shape",
+        category = "shapes",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 85,
         mediumPrice = 130,
