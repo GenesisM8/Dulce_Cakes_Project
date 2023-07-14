@@ -61,11 +61,11 @@ def add_cart_item(cakeId):
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
-        # Get the form data using the to_dict method
         form_data = form.to_dict()
 
         cake = Cake.query.get(cakeId)
-        price = calculate_price(form_data['size'], cake)
+        size = form_data['size']
+        price = calculate_price(size, cake)
 
         cart_item = Cartitem(
             userId=current_user.id,

@@ -24,9 +24,44 @@ def get_all_cart_items():
     for item in cart_items:
         cart_item = item.to_dict()
         cart_item['cake'] = cake_dict.get(item.cakeId)
+        cart_item['cakeCharacter'] = item.cakeCharacter
+        cart_item['price'] = item.price
         cart_items_with_cake.append(cart_item)
 
     return {"all_items": cart_items_with_cake}
 
+@cart_routes.route('/<int:itemId>', methods=['PUT'])
+@login_required
+def update_cart_item_quantity(itemId):
+    user = current_user
 
+    cart_item = Cartitem.query.get(itemId)
+    if not cart_item or cart_item.userId != user.id:
+        return {"error": "Cart item not found"}, 400
+
+    data = request.get_json()
+    quantity = data.get('quantity')
+
+    if not quantity or type(quantity) is not int:
+        return {"error": "Invalid quantity"}, 400
+
+    cart_item.quantity = quantity
+    db.session.commit()
+
+    return {"updatedCartItem": cart_item.to_dict()}
+
+@cart_routes.route('/<int:item_id>', methods=['DELETE'])
+@login_required
+def delete_cart_item(item_id):
+    user = current_user
+
+    cart_item = Cartitem.query.get(item_id)
+
+    if not cart_item or cart_item.userId != user.id:
+        return {"error": "Cart item not found"}, 400
+
+    db.session.delete(cart_item)
+    db.session.commit()
+
+    return {"message": "Cart item deleted successfully"}
 

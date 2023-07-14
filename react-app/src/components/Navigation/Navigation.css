@@ -17,3 +17,8 @@
   flex-direction: row;
   gap: 3rem;
 }
+
+.cart-link{
+  display: flex;
+  gap:6px
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { thunkAddCartItem } from '../../store/cart';
+import { useDispatch, useSelector } from 'react-redux';
+import { thunkAddCartItem, thunkGetCartItems } from '../../store/cart';
+import { useHistory } from 'react-router-dom';
 import './cart.css';
 
 const AddCartItem = ({ cakeId, cake }) => {
@@ -11,20 +12,16 @@ const AddCartItem = ({ cakeId, cake }) => {
   const [cakeCharacter, setCakeCharacter] = useState('');
   const [glutenFree, setGlutenFree] = useState(false);
   const [foodAllergens, setFoodAllergens] = useState('');
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState('');
   const [otherColor, setOtherColor] = useState('');
+  const history = useHistory();
+  const sessionUser = useSelector(state => state.session.user);
 
   useEffect(() => {
     if (cake) {
       setPrice(cake.smallPrice);
     }
   }, [cake]);
-
-  const handleSizeChange = (e) => {
-    const selectedSize = e.target.value;
-    setSize(selectedSize);
-    setPrice(getSelectedSizePrice(selectedSize));
-  };
 
   const handleColorChange = (e) => {
     const selectedColor = e.target.value;
@@ -41,40 +38,56 @@ const AddCartItem = ({ cakeId, cake }) => {
     setFlavor(selectedFlavor);
   };
 
+  const handleGlutenFreeChange = (e) => {
+    const selectedOption = e.target.value === 'gluten-free';
+    setGlutenFree(selectedOption);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const formData = {
-      size,
-      color: color === 'other' ? otherColor : color,
-      flavor,
-      cakeCharacter,
-      glutenFree,
-      foodAllergens,
-    };
+    if (sessionUser) {
+      const formData = {
+        size,
+        color: color === 'other' ? otherColor : color,
+        flavor,
+        cakeCharacter,
+        glutenFree,
+        foodAllergens,
+      };
 
-    dispatch(thunkAddCartItem(cakeId, formData));
-
-    setSize('');
-    setColor('');
-    setFlavor('');
-    setCakeCharacter('');
-    setGlutenFree(false);
-    setFoodAllergens('');
-    setPrice(0);
-    setOtherColor('');
+      dispatch(thunkAddCartItem(cakeId, formData));
+      setSize('');
+      setColor('');
+      setFlavor('');
+      setCakeCharacter('');
+      setGlutenFree(false);
+      setFoodAllergens('');
+      setPrice(cake.smallPrice);
+      setOtherColor('');
+      dispatch(thunkGetCartItems());
+      history.push('/cart');
+    } else {
+      history.push('/login');
+    }
   };
 
   const getSelectedSizePrice = (selectedSize) => {
-    if (selectedSize === 'small') {
+    if (selectedSize === 'Small') {
       return cake.smallPrice;
-    } else if (selectedSize === 'medium') {
+    } else if (selectedSize === 'Medium') {
       return cake.mediumPrice;
-    } else if (selectedSize === 'large') {
+    } else if (selectedSize === 'Large') {
       return cake.largePrice;
     }
 
     return 0;
+  };
+
+  const handleSizeChange = (e) => {
+    const selectedSize = e.target.value;
+    setSize(selectedSize);
+    setPrice(getSelectedSizePrice(selectedSize));
   };
 
   if (!cake) {
@@ -94,28 +107,12 @@ const AddCartItem = ({ cakeId, cake }) => {
             required
             onInvalid={(e) => e.target.setCustomValidity('Please enter your desired letter.')}
             onInput={(e) => e.target.setCustomValidity('')}
-            
           />
         </label>
       );
-    } else if (cake.category === 'letters' && cake.name === 'Double Letters Cake'){
+    } else if (cake.category === 'letters' && (cake.name === 'Double Letters Cake' || cake.name === 'Three letters Cake')) {
       return (
-          <label>
-          Choice of letters:
-          <input
-            type="text"
-            value={cakeCharacter}
-            onChange={(e) => setCakeCharacter(e.target.value)}
-            maxLength={2}
-            required
-            onInvalid={(e) => e.target.setCustomValidity('Please enter your desired letters.')}
-            onInput={(e) => e.target.setCustomValidity('')}
-          />
-        </label>
-      )
-    }else if (cake.category === 'letters' && cake.name === 'Three letters Cake'){
-      return (
-          <label>
+        <label>
           Choice of letters:
           <input
             type="text"
@@ -127,8 +124,8 @@ const AddCartItem = ({ cakeId, cake }) => {
             onInput={(e) => e.target.setCustomValidity('')}
           />
         </label>
-      )
-    }
+      );
+    } 
     else if (cake.category === 'numbers') {
       return (
         <label>
@@ -152,20 +149,31 @@ const AddCartItem = ({ cakeId, cake }) => {
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="form-container">
-        <p>Price: ${price}.00</p>
+        <p>${price}.00</p>
         <label>
           Size:
-          <select value={size} onChange={handleSizeChange} required >
-            {/* <option value="">Select Size</option> */}
-            <option value="small">Small (8-10 servings)</option>
-            <option value="medium">Medium (15-18 servings)</option>
-            <option value="large">Large (20-25 servings)</option>
+          <select
+            value={size}
+            onChange={handleSizeChange}
+            required
+            onInvalid={(e) => e.target.setCustomValidity('Please select a Size.')}
+            onInput={(e) => e.target.setCustomValidity('')}
+          >
+            <option value="">Select Size</option>
+            <option value="Small">Small (8-10 servings)</option>
+            <option value="Medium">Medium (15-18 servings)</option>
+            <option value="Large">Large (20-25 servings)</option>
           </select>
         </label>
         <label>
           Color:
-          <select value={color} onChange={handleColorChange} required onInvalid={(e) => e.target.setCustomValidity('Please select a color.')}
-            onInput={(e) => e.target.setCustomValidity('')}>
+          <select
+            value={color}
+            onChange={handleColorChange}
+            required
+            onInvalid={(e) => e.target.setCustomValidity('Please select a color.')}
+            onInput={(e) => e.target.setCustomValidity('')}
+          >
             <option value="">Select Color</option>
             <option value="pink">Pink</option>
             <option value="blue">Blue</option>
@@ -173,15 +181,22 @@ const AddCartItem = ({ cakeId, cake }) => {
             <option value="red">Red</option>
             <option value="green">Green</option>
             <option value="purple">Purple</option>
-            <option value="same">As Shown</option>
+            <option value="As Shown">As Shown</option>
             <option value="other">Other</option>
           </select>
         </label>
         {color === 'other' && (
           <label>
             Other Color:
-            <input type="text" value={otherColor} maxLength={50} onChange={handleOtherColorChange} required onInvalid={(e) => e.target.setCustomValidity('Specify the color.') }
-            onInput={(e) => e.target.setCustomValidity('')}/>
+            <input
+              type="text"
+              value={otherColor}
+              maxLength={50}
+              onChange={handleOtherColorChange}
+              required
+              onInvalid={(e) => e.target.setCustomValidity('Please specify the color.')}
+              onInput={(e) => e.target.setCustomValidity('')}
+            />
           </label>
         )}
         <label>
@@ -199,12 +214,29 @@ const AddCartItem = ({ cakeId, cake }) => {
         </label>
         {renderCakeCharacterInput()}
         <label>
-          Gluten Free:
-          <input
-            type="checkbox"
-            checked={glutenFree}
-            onChange={(e) => setGlutenFree(e.target.checked)}
-          />
+          Base Option:
+          <div className="radio-buttons">
+            <label className={`radio-button ${!glutenFree ? 'selected' : ''}`}>
+              <input
+                type="radio"
+                name="glutenFree"
+                value="regular"
+                checked={!glutenFree}
+                onChange={handleGlutenFreeChange}
+              />
+              Regular
+            </label>
+            <label className={`radio-button ${glutenFree ? 'selected' : ''}`}>
+              <input
+                type="radio"
+                name="glutenFree"
+                value="gluten-free"
+                checked={glutenFree}
+                onChange={handleGlutenFreeChange}
+              />
+              Gluten Free
+            </label>
+          </div>
         </label>
         <label>
           Food Allergens:
@@ -224,5 +256,8 @@ const AddCartItem = ({ cakeId, cake }) => {
 };
 
 export default AddCartItem;
+
+
+
 
 

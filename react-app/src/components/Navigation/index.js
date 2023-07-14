@@ -6,6 +6,11 @@ import './Navigation.css';
 
 function Navigation({ isLoaded }){
 	const sessionUser = useSelector(state => state.session.user);
+	const cartItems = useSelector((state) => state.cart.cartItems);
+
+	const totalCartItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+
 
 	return (
 		<div>
@@ -18,9 +23,11 @@ function Navigation({ isLoaded }){
 					<ProfileButton user={sessionUser} />
 				</li>
 			)}
-			 <NavLink exact to="/cart" className="cart-link">
-          <i className="fas fa-shopping-cart"></i>
-        </NavLink>
+			<NavLink exact to="/cart" className="cart-link">
+  <i className="fas fa-shopping-cart"></i>
+  {totalCartItems > 0 && <span className="cart-item-count">{totalCartItems}</span>}
+</NavLink>
+
 		</ul>
 		<div className='sub-nav'>
 			<NavLink exact to="/cakes">All Cakes</NavLink>	

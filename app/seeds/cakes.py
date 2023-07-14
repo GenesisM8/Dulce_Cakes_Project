@@ -26,7 +26,7 @@ def seed_cakes():
 
     cake3 = Cake(
         name = "Single Letter Cake",
-        category = "lettesr",
+        category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 89,
         mediumPrice = 130,
