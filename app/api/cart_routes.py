@@ -10,62 +10,23 @@ cart_routes = Blueprint("cart", __name__)
 @cart_routes.route('')
 @login_required
 def get_all_cart_items():
-
     user = current_user
     cart_items = Cartitem.query.filter(Cartitem.userId == user.id).all()
 
-    return {"all_items": {item.id: item.to_dict() for item in cart_items}}
+
+    # Eager load the cake details for each cart item
+    cake_ids = [item.cakeId for item in cart_items]
+    cakes = Cake.query.filter(Cake.id.in_(cake_ids)).all()
+    cake_dict = {cake.id: cake.to_dict() for cake in cakes}
+
+    # Add the cake details to each cart item
+    cart_items_with_cake = []
+    for item in cart_items:
+        cart_item = item.to_dict()
+        cart_item['cake'] = cake_dict.get(item.cakeId)
+        cart_items_with_cake.append(cart_item)
+
+    return {"all_items": cart_items_with_cake}
 
 
-# @cart_routes.route('/new', methods=['POST'])
-# @login_required
-# def add_cart_item():
-#     form = CustomizeCakeForm()
-#     form['csrf_token'].data = request.cookies['csrf_token']
 
-#     if form.validate_on_submit():
-#         size = form.size.data
-#         color = form.color.data
-#         gluten_free = form.glutenFree.data
-#         flavor = form.flavor.data
-#         cake_character = form.cakeCharacter.data
-#         food_allergens = form.foodAllergens.data
-
-#         cake_id = request.json.get('cakeId')
-
-#         # Retrieve the Cake object based on the cakeId
-#         cake = Cake.query.get(cake_id)
-
-#         # Calculate the price based on the selected size
-#         if size == "Small (8-10 servings)":
-#             price = cake.smallPrice
-#         elif size == "Medium (12-16 servings)":
-#             price = cake.mediumPrice
-#         elif size == "Large (18-25 servings)":
-#             price = cake.largePrice
-#         else:
-#             return {'errors': 'Invalid size'}, 400
-
-#         # Create a new cart item with the selected customization
-#         cart_item = Cartitem(
-#             userId=current_user.id,
-#             cakeId=cake_id,
-#             size=size,
-#             color=color,
-#             glutenFree=gluten_free,
-#             flavor=flavor,
-#             cakeCharacter=cake_character,
-#             foodAllergens=food_allergens,
-#             quantity=1,
-#             price=price,
-#             total=price
-#         )
-
-#         db.session.add(cart_item)
-#         db.session.commit()
-
-#         # Return a response indicating success
-#         return {"new_cartItem": cart_item.to_dict()}
-
-#     print(form.errors)  # Print the validation errors for debugging purposes
-#     return {'errors': validation_errors_to_error_messages(form.errors)}, 401

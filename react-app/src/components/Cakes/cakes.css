@@ -10,3 +10,17 @@ margin: 6rem;
     width: 15rem;
     height: 16rem;
 }
+
+.single-cake-img{
+    width: 25rem;
+}
+
+.main-single-container{
+    display: flex;
+    flex-direction: row;
+    margin: 3rem;
+}
+
+.custom-container{
+    margin-top: 10rem;
+}

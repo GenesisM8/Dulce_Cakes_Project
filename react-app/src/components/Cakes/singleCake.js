@@ -18,11 +18,13 @@ const SingleCake = () => {
   if (!cake) return null;
 
   return (
-    <div>
-      <h2>{cake.name}</h2>
-      <img src={cake.imageUrl} alt="Cake" />
+    <div className="main-single-container">
       <div>
-        <AddCartItem cakeId={cake.id} />
+      <h2>{cake.name}</h2>
+      <img src={cake.imageUrl} alt="Cake" className="single-cake-img" />
+      </div>
+      <div className="custom-container">
+        <AddCartItem cakeId={cake.id} cake={cake} />
       </div>
     </div>
   );

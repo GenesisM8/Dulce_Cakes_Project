@@ -5,3 +5,15 @@
 .hidden {
   display: none;
 }
+
+.sub-nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.nav{
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}

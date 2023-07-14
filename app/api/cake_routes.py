@@ -54,60 +54,6 @@ def get_single_restaurant(cakeId):
     return {"cake_info": cake_info.to_dict()}
 
 
-# #customize and add a cake to the cart
-# # Customize and add a cake to the cart
-# @cake_routes.route('/<int:cakeId>', methods=['POST'])
-# @login_required
-# def add_cart_item(cakeId):
-
-#     form = CustomizeCakeForm()
-#     form['csrf_token'].data = request.cookies['csrf_token']
-
-#     if form.validate_on_submit():
-#         size = request.json.get('size')
-#         color = request.json.get('color')
-#         gluten_free = request.json.get('glutenFree')
-#         flavor = request.json.get('flavor')
-#         cake_character = request.json.get('cakeCharacter')
-#         food_allergens = request.json.get('foodAllergens')
-
-#         cake = Cake.query.get(cakeId)
-
-#         # Calculate the price based on the selected size
-#         if size == "Small":
-#             price = cake.smallPrice
-#         elif size == "Medium":
-#             price = cake.mediumPrice
-#         elif size == "Large":
-#             price = cake.largePrice
-#         else:
-#             return {'errors': 'Invalid size'}, 400
-
-#         # Create a new cart item with the selected customization
-#         cart_item = Cartitem(
-#             userId=current_user.id,
-#             cakeId=cakeId,
-#             size=size,
-#             color=color,
-#             glutenFree=gluten_free,
-#             flavor=flavor,
-#             cakeCharacter=cake_character,
-#             foodAllergens=food_allergens,
-#             quantity=1,
-#             price=price,
-#             total=price
-#         )
-
-#         db.session.add(cart_item)
-#         db.session.commit()
-      
-#         # Return a response indicating success
-#         return {"new_cartItem": cart_item.to_dict()}
-
-#     print(form.errors)  # Print the validation errors for debugging purposes
-#     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
-
-
 @cake_routes.route('/<int:cakeId>', methods=['POST'])
 @login_required
 def add_cart_item(cakeId):
