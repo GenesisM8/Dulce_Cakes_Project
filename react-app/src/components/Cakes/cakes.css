@@ -1,0 +1,12 @@
+.main-cakes-container{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+gap: 20px;
+margin: 6rem;
+}
+
+.cake-img{
+    width: 15rem;
+    height: 16rem;
+}

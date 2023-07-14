@@ -25,18 +25,6 @@ class Cartitem(db.Model):
     cakes = db.relationship("Cake", back_populates='cartitems')
 
 
-    # def update_size(self, new_size):
-    #     if new_size in ['Small', 'Medium', 'Large']:
-    #         self.size = new_size
-    #         cake = self.cakes
-    #         if new_size == 'Small':
-    #             self.price = cake.smallPrice
-    #         elif new_size == 'Medium':
-    #             self.price = cake.mediumPrice
-    #         elif new_size == 'Large':
-    #             self.price = cake.largePrice
-    #         self.total = self.price * self.quantity
-
     def to_dict(self):
         return {
             'id': self.id,

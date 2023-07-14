@@ -5,6 +5,14 @@ import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
+import AllCakes from "./components/Cakes/cakes";
+import LetterCakes from "./components/Cakes/letterCakes";
+import NumberCakes from "./components/Cakes/numbersCakes";
+import ShapeCakes from "./components/Cakes/shapeCakes";
+import HolidayCakes from "./components/Cakes/holidayCakes";
+import SingleCake from "./components/Cakes/singleCake";
+import Cart from "./components/Cart";
+import AddCartItem from "./components/Cart/addItem";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +32,27 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
+          <Route exact path="/cakes">
+            <AllCakes/>
+          </Route>
+          <Route exact path="/cakes/letters">
+            <LetterCakes/>
+          </Route>
+        <Route exact path="/cakes/numbers">
+          <NumberCakes/>
+        </Route>
+        <Route exact path="/cakes/shapes">
+          <ShapeCakes/>
+        </Route>
+        <Route exact path="/cakes/holiday">
+          <HolidayCakes/>
+        </Route>
+        <Route exact path="/cakes/:cakeId">
+          <SingleCake/>
+        </Route>
+         <Route exact path="/cart">
+          <Cart/>
+        </Route>
         </Switch>
       )}
     </>
