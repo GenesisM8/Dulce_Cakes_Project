@@ -24,5 +24,4 @@ class Review(db.Model):
             'review': self.review,
             'imageUrl': self.imageUrl,
             'createdAt': self.createdAt,
-            'UserName' : self.users.firstName + " " + self.users.lastName
         }
