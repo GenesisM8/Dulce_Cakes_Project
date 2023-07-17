@@ -17,6 +17,7 @@ const colorDisplayNames = {
   gold: 'Yellow',
   coral: 'Coral',
   orangeRed: 'Red',
+  burlywood: 'Neutral'
 };
 
 const Cart = () => {
@@ -83,7 +84,7 @@ const Cart = () => {
                     </p>
                   )}
                   <p>Flavor: {item.flavor}</p>
-                  {item.cakeCharacter && <p>Cake Character: {item.cakeCharacter}</p>}
+                  {item.cakeCharacter && <p>Cake Character: {item.cakeCharacter.toUpperCase()}</p>}
                 </div>
                 <div>
                   <p>Price: ${item.price}.00</p>

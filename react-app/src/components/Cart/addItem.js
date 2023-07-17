@@ -110,7 +110,7 @@ const AddCartItem = ({ cakeId, cake }) => {
     return null;
   }
 
-  const availableColors = ['white', 'pink', 'hotPink', 'plum', 'blueviolet', 'lightskyblue', 'dodgerBlue', 'turquoise', 'palegreen', 'gold', 'coral', 'orangeRed'];
+  const availableColors = ['white', 'pink', 'hotPink', 'plum', 'blueviolet', 'lightskyblue', 'dodgerBlue', 'turquoise', 'lightgreen', 'gold', 'coral', 'orangeRed', 'burlywood'];
 
   const renderCakeCharacterInput = () => {
     if (cake.category === 'letters' && cake.name === 'Single Letter Cake') {
@@ -156,6 +156,8 @@ const AddCartItem = ({ cakeId, cake }) => {
             maxLength={2}
             required
             placeholder='max 2 characters'
+            pattern="[0-9]*" // Specify the pattern attribute to allow only numbers
+            title="Please enter a valid number."
             onInvalid={(e) => e.target.setCustomValidity('Please enter your desired number.')}
             onInput={(e) => e.target.setCustomValidity('')}
           />
@@ -277,6 +279,7 @@ const AddCartItem = ({ cakeId, cake }) => {
          Design notes / Allergies if any
           <textarea
             type="text"
+            className="center"
             value={foodAllergens}
             maxLength={50}
             onChange={(e) => setFoodAllergens(e.target.value)}
