@@ -3,6 +3,22 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { thunkGetCartItems, thunkUpdateCartItemQuantity, thunkDeleteCartItem } from '../../store/cart';
 
+// Create a mapping of color values to display names
+const colorDisplayNames = {
+  white: 'White',
+  pink: 'Light Pink',
+  hotPink: 'Hot Pink',
+  plum: 'Lavender',
+  blueviolet: 'Violet',
+  lightskyblue: 'Light Blue',
+  dodgerBlue: 'Blue',
+  turquoise: 'Turquoise',
+  palegreen: 'Green',
+  gold: 'Yellow',
+  coral: 'Coral',
+  orangeRed: 'Red',
+};
+
 const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -57,7 +73,15 @@ const Cart = () => {
                 <div>
                   <p>{item.cake.name}</p>
                   <p>Size: {item.size}</p>
-                  <p>Color: {item.color}</p>
+                  {item.color2 ? (
+                    <p>
+                      Color: {colorDisplayNames[item.color]}, and {colorDisplayNames[item.color2]}
+                    </p>
+                  ) : (
+                    <p>
+                      Color: {colorDisplayNames[item.color]} {item.otherColor}
+                    </p>
+                  )}
                   <p>Flavor: {item.flavor}</p>
                   {item.cakeCharacter && <p>Cake Character: {item.cakeCharacter}</p>}
                 </div>

@@ -60,6 +60,8 @@ def add_cart_item(cakeId):
     form = CustomizeCakeForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
+    
+
     if form.validate_on_submit():
         form_data = form.to_dict()
 
@@ -94,3 +96,5 @@ def calculate_price(size, cake):
         return cake.largePrice
     else:
         return 0  # Or handle the case for invalid size
+    
+

@@ -7,15 +7,15 @@ import './cart.css';
 const AddCartItem = ({ cakeId, cake }) => {
   const dispatch = useDispatch();
   const [size, setSize] = useState('');
-  const [color, setColor] = useState('');
   const [flavor, setFlavor] = useState('');
   const [cakeCharacter, setCakeCharacter] = useState('');
   const [glutenFree, setGlutenFree] = useState(false);
   const [foodAllergens, setFoodAllergens] = useState('');
   const [price, setPrice] = useState('');
+  const [selectedColors, setSelectedColors] = useState([]);
   const [otherColor, setOtherColor] = useState('');
   const history = useHistory();
-  const sessionUser = useSelector(state => state.session.user);
+  const sessionUser = useSelector((state) => state.session.user);
 
   useEffect(() => {
     if (cake) {
@@ -23,9 +23,23 @@ const AddCartItem = ({ cakeId, cake }) => {
     }
   }, [cake]);
 
-  const handleColorChange = (e) => {
-    const selectedColor = e.target.value;
-    setColor(selectedColor);
+  const handleColorChange = (selectedColor) => {
+    if (selectedColors.length === 2) {
+      if (!selectedColors.includes(selectedColor)) {
+        setSelectedColors([selectedColors[0], selectedColor]);
+      } else {
+        setSelectedColors([selectedColor]);
+      }
+    } 
+    else {
+      setSelectedColors((prevColors) => {
+        if (prevColors.includes(selectedColor)) {
+          return prevColors.filter((color) => color !== selectedColor);
+        } else {
+          return [...prevColors, selectedColor];
+        }
+      });
+    }
   };
 
   const handleOtherColorChange = (e) => {
@@ -49,7 +63,9 @@ const AddCartItem = ({ cakeId, cake }) => {
     if (sessionUser) {
       const formData = {
         size,
-        color: color === 'other' ? otherColor : color,
+        color: selectedColors.length > 0 ? selectedColors[0] : '',
+        color2: selectedColors.length === 2 ? selectedColors[1] : '',
+        otherColor,
         flavor,
         cakeCharacter,
         glutenFree,
@@ -58,7 +74,7 @@ const AddCartItem = ({ cakeId, cake }) => {
 
       dispatch(thunkAddCartItem(cakeId, formData));
       setSize('');
-      setColor('');
+      setSelectedColors([]);
       setFlavor('');
       setCakeCharacter('');
       setGlutenFree(false);
@@ -94,17 +110,20 @@ const AddCartItem = ({ cakeId, cake }) => {
     return null;
   }
 
+  const availableColors = ['white', 'pink', 'hotPink', 'plum', 'blueviolet', 'lightskyblue', 'dodgerBlue', 'turquoise', 'palegreen', 'gold', 'coral', 'orangeRed'];
+
   const renderCakeCharacterInput = () => {
     if (cake.category === 'letters' && cake.name === 'Single Letter Cake') {
       return (
         <label>
-          Choice of letter:
+          Choice of letter: 
           <input
             type="text"
             value={cakeCharacter}
             onChange={(e) => setCakeCharacter(e.target.value)}
             maxLength={3}
             required
+            placeholder='max 3 characters'
             onInvalid={(e) => e.target.setCustomValidity('Please enter your desired letter.')}
             onInput={(e) => e.target.setCustomValidity('')}
           />
@@ -113,29 +132,30 @@ const AddCartItem = ({ cakeId, cake }) => {
     } else if (cake.category === 'letters' && (cake.name === 'Double Letters Cake' || cake.name === 'Three letters Cake')) {
       return (
         <label>
-          Choice of letters:
+          Choice of letters: 
           <input
             type="text"
             value={cakeCharacter}
             onChange={(e) => setCakeCharacter(e.target.value)}
             maxLength={3}
+            placeholder='max 3 characters'
             required
             onInvalid={(e) => e.target.setCustomValidity('Please enter your desired letters.')}
             onInput={(e) => e.target.setCustomValidity('')}
           />
         </label>
       );
-    } 
-    else if (cake.category === 'numbers') {
+    } else if (cake.category === 'numbers') {
       return (
         <label>
-          Choice of number:
+          Choice of number: 
           <input
             type="text"
             value={cakeCharacter}
             onChange={(e) => setCakeCharacter(e.target.value)}
             maxLength={2}
             required
+            placeholder='max 2 characters'
             onInvalid={(e) => e.target.setCustomValidity('Please enter your desired number.')}
             onInput={(e) => e.target.setCustomValidity('')}
           />
@@ -146,11 +166,16 @@ const AddCartItem = ({ cakeId, cake }) => {
     }
   };
 
+  // Function to check if any colors are selected
+  const areColorsSelected = () => {
+    return selectedColors.length > 0 || otherColor.length > 0;
+  };
+
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="form-container">
         <p>${price}.00</p>
-        <label>
+        <label className='center'>
           Size:
           <select
             value={size}
@@ -165,41 +190,51 @@ const AddCartItem = ({ cakeId, cake }) => {
             <option value="Large">Large (20-25 servings)</option>
           </select>
         </label>
-        <label>
-          Color:
-          <select
-            value={color}
-            onChange={handleColorChange}
-            required
-            onInvalid={(e) => e.target.setCustomValidity('Please select a color.')}
-            onInput={(e) => e.target.setCustomValidity('')}
-          >
-            <option value="">Select Color</option>
-            <option value="pink">Pink</option>
-            <option value="blue">Blue</option>
-            <option value="yellow">Yellow</option>
-            <option value="red">Red</option>
-            <option value="green">Green</option>
-            <option value="purple">Purple</option>
-            <option value="As Shown">As Shown</option>
-            <option value="other">Other</option>
-          </select>
-        </label>
-        {color === 'other' && (
+        {renderCakeCharacterInput()}
+        {cake.category !== 'holiday' && (
           <label>
-            Other Color:
-            <input
-              type="text"
-              value={otherColor}
-              maxLength={50}
-              onChange={handleOtherColorChange}
-              required
-              onInvalid={(e) => e.target.setCustomValidity('Please specify the color.')}
-              onInput={(e) => e.target.setCustomValidity('')}
-            />
+            <p>Please select up to 2 colors </p>
+            <div className="color-swatches">
+              {availableColors.map((colorOption) => (
+                <label
+                  key={colorOption}
+                  className={`color-swatch ${selectedColors.includes(colorOption) ? 'selected' : ''}`}
+                  style={{ backgroundColor: colorOption }}
+                >
+                  <input
+                    type="checkbox"
+                    value={colorOption}
+                    // checked={selectedColors.includes(colorOption)}
+                    onChange={() => handleColorChange(colorOption)}
+                    required={!areColorsSelected()} // Set required only if no colors are selected
+                    onInvalid={(e) => {
+                      if (areColorsSelected()) {
+                        e.target.setCustomValidity(''); // Reset custom validity if colors are selected
+                      } else {
+                        e.target.setCustomValidity('Please select a color or spicify if other');
+                      }
+                    }}
+                    onInput={(e) => e.target.setCustomValidity('')}
+                  />
+                </label>
+              ))}
+            </div>
           </label>
         )}
-        <label>
+        {cake.category !== 'holiday' && (
+            <label className='center'>
+              Not on the list? Specify here
+              <input
+                type="text"
+                value={otherColor}
+                maxLength={50}
+                onChange={handleOtherColorChange}
+                placeholder='Custom colors'
+              />
+            </label>
+            )}
+        <label className='center'>
+        
           Cream Flavor:
           <select value={flavor} onChange={handleFlavorChange} required>
             <option value="">Select Flavor</option>
@@ -212,8 +247,8 @@ const AddCartItem = ({ cakeId, cake }) => {
             <option value="Pistachio">Pistachio</option>
           </select>
         </label>
-        {renderCakeCharacterInput()}
-        <label>
+        
+        <label className='center'>
           Base Option:
           <div className="radio-buttons">
             <label className={`radio-button ${!glutenFree ? 'selected' : ''}`}>
@@ -238,14 +273,16 @@ const AddCartItem = ({ cakeId, cake }) => {
             </label>
           </div>
         </label>
-        <label>
-          Food Allergens:
-          <input
+        <label >
+         Design notes / Allergies if any
+          <textarea
             type="text"
             value={foodAllergens}
             maxLength={50}
             onChange={(e) => setFoodAllergens(e.target.value)}
-            placeholder="Enter any food allergies"
+            cols='40'
+            rows='7'
+            
           />
         </label>
 
@@ -256,8 +293,3 @@ const AddCartItem = ({ cakeId, cake }) => {
 };
 
 export default AddCartItem;
-
-
-
-
-
