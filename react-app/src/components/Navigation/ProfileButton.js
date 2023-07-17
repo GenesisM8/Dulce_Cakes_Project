@@ -31,6 +31,18 @@ function ProfileButton({ user }) {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
+    const loginButton = (e) => {
+    e.preventDefault();
+    history.push("/login");
+    closeMenu();
+  };
+
+  const signupButton = (e) => {
+    e.preventDefault();
+    history.push("/signup");
+    closeMenu();
+  };
+
   const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logout());
@@ -57,7 +69,15 @@ function ProfileButton({ user }) {
           </>
         ) : (
           <>
-            <OpenModalButton
+           <div>
+              <button onClick={signupButton} >
+                Sign Up
+              </button>
+              <button onClick={loginButton}>
+                Log in
+              </button>
+            </div>
+            {/* <OpenModalButton
               buttonText="Log In"
               onItemClick={closeMenu}
               modalComponent={<LoginFormModal />}
@@ -67,7 +87,7 @@ function ProfileButton({ user }) {
               buttonText="Sign Up"
               onItemClick={closeMenu}
               modalComponent={<SignupFormModal />}
-            />
+            /> */}
           </>
         )}
       </ul>
