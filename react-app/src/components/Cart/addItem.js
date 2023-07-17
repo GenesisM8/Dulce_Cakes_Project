@@ -9,7 +9,7 @@ const AddCartItem = ({ cakeId, cake }) => {
   const [size, setSize] = useState('');
   const [flavor, setFlavor] = useState('');
   const [cakeCharacter, setCakeCharacter] = useState('');
-  const [glutenFree, setGlutenFree] = useState(false);
+  const [glutenFree, setGlutenFree] = useState('Regular');
   const [foodAllergens, setFoodAllergens] = useState('');
   const [price, setPrice] = useState('');
   const [selectedColors, setSelectedColors] = useState([]);
@@ -52,10 +52,15 @@ const AddCartItem = ({ cakeId, cake }) => {
     setFlavor(selectedFlavor);
   };
 
+ const getGlutenFreeLabel = (glutenFree) => {
+    return glutenFree ? 'Gluten Free' : 'Regular';
+  };
+
   const handleGlutenFreeChange = (e) => {
     const selectedOption = e.target.value === 'gluten-free';
-    setGlutenFree(selectedOption);
+    setGlutenFree(getGlutenFreeLabel(selectedOption));
   };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -77,7 +82,7 @@ const AddCartItem = ({ cakeId, cake }) => {
       setSelectedColors([]);
       setFlavor('');
       setCakeCharacter('');
-      setGlutenFree(false);
+      setGlutenFree('Regular');
       setFoodAllergens('');
       setPrice(cake.smallPrice);
       setOtherColor('');
@@ -156,7 +161,7 @@ const AddCartItem = ({ cakeId, cake }) => {
             maxLength={2}
             required
             placeholder='max 2 characters'
-            pattern="[0-9]*" // Specify the pattern attribute to allow only numbers
+            pattern="[0-9]*" 
             title="Please enter a valid number."
             onInvalid={(e) => e.target.setCustomValidity('Please enter your desired number.')}
             onInput={(e) => e.target.setCustomValidity('')}
@@ -250,25 +255,25 @@ const AddCartItem = ({ cakeId, cake }) => {
           </select>
         </label>
         
-        <label className='center'>
+<label className='center'>
           Base Option:
           <div className="radio-buttons">
-            <label className={`radio-button ${!glutenFree ? 'selected' : ''}`}>
+            <label className={`radio-button ${glutenFree === 'Regular' ? 'selected' : ''}`}>
               <input
                 type="radio"
                 name="glutenFree"
                 value="regular"
-                checked={!glutenFree}
+                checked={glutenFree === 'Regular'}
                 onChange={handleGlutenFreeChange}
               />
               Regular
             </label>
-            <label className={`radio-button ${glutenFree ? 'selected' : ''}`}>
+            <label className={`radio-button ${glutenFree === 'Gluten Free' ? 'selected' : ''}`}>
               <input
                 type="radio"
                 name="glutenFree"
                 value="gluten-free"
-                checked={glutenFree}
+                checked={glutenFree === 'Gluten Free'}
                 onChange={handleGlutenFreeChange}
               />
               Gluten Free

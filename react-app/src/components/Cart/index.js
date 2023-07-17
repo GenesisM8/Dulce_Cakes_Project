@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { thunkGetCartItems, thunkUpdateCartItemQuantity, thunkDeleteCartItem } from '../../store/cart';
 
-// Create a mapping of color values to display names
+// Define color display names (assuming you have this somewhere)
 const colorDisplayNames = {
   white: 'White',
   pink: 'Light Pink',
@@ -13,11 +13,11 @@ const colorDisplayNames = {
   lightskyblue: 'Light Blue',
   dodgerBlue: 'Blue',
   turquoise: 'Turquoise',
-  palegreen: 'Green',
+  lightgreen: 'Green',
   gold: 'Yellow',
   coral: 'Coral',
   orangeRed: 'Red',
-  burlywood: 'Neutral'
+  burlywood: 'Neutral',
 };
 
 const Cart = () => {
@@ -62,29 +62,35 @@ const Cart = () => {
   const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
-    <div className='cart-container'>
+    <div className="cart-container">
       {cartItems.map((item) => (
         <div key={item.id}>
           {item.cake && (
             <>
-              <div className='single-cart-item-container'>
+              <div className="single-cart-item-container">
                 <div>
                   <img src={item.cake.imageUrl} alt={item.cake.name} className="cake-img-cart" />
                 </div>
                 <div>
                   <p>{item.cake.name}</p>
+                  {item.cakeCharacter && <p>Character: {item.cakeCharacter.toUpperCase()}</p>}
                   <p>Size: {item.size}</p>
-                  {item.color2 ? (
-                    <p>
-                      Color: {colorDisplayNames[item.color]}, and {colorDisplayNames[item.color2]}
-                    </p>
-                  ) : (
-                    <p>
-                      Color: {colorDisplayNames[item.color]} {item.otherColor}
-                    </p>
+                  {item.cake.category !== 'holiday' && ( // Condition to hide color for holiday items
+                    <>
+                      {item.color2 ? (
+                        <p>
+                          Color: {colorDisplayNames[item.color]}, and {colorDisplayNames[item.color2]}
+                        </p>
+                      ) : (
+                        <p>
+                          Color: {colorDisplayNames[item.color]} {item.otherColor}
+                        </p>
+                      )}
+                    </>
                   )}
-                  <p>Flavor: {item.flavor}</p>
-                  {item.cakeCharacter && <p>Cake Character: {item.cakeCharacter.toUpperCase()}</p>}
+                  <p>Cream Flavor: {item.flavor}</p>
+                  
+                  {item.glutenFree && <p>Base option: {item.glutenFree}</p>}
                 </div>
                 <div>
                   <p>Price: ${item.price}.00</p>
@@ -103,7 +109,6 @@ const Cart = () => {
               </div>
             </>
           )}
-          
         </div>
       ))}
 
@@ -116,6 +121,7 @@ const Cart = () => {
 };
 
 export default Cart;
+
 
 
 
