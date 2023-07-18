@@ -12,7 +12,7 @@ import ShapeCakes from "./components/Cakes/shapeCakes";
 import HolidayCakes from "./components/Cakes/holidayCakes";
 import SingleCake from "./components/Cakes/singleCake";
 import Cart from "./components/Cart";
-import AddCartItem from "./components/Cart/addItem";
+import HomePage from "./components/HomePage";
 import Reviews from "./components/Reviews";
 
 
@@ -28,6 +28,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path="/">
+          <HomePage/>
+        </Route>
           <Route path="/login" >
             <LoginFormPage />
           </Route>
@@ -58,6 +61,7 @@ function App() {
         <Route exact path="/reviews">
           <Reviews/>
         </Route>
+        
         </Switch>
       )}
     </>

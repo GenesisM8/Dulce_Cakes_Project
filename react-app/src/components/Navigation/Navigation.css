@@ -6,19 +6,98 @@
   display: none;
 }
 
+.sub-nav-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
 .sub-nav{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-bottom: 2rem;
+  gap: 30px;
+
 }
 
 .nav{
   display: flex;
   flex-direction: row;
-  gap: 3rem;
+  justify-content: center;
+  gap: 1rem;
+  height: 7rem;
+  align-items: center;
+  width: 100%;
+/* padding-right: 6rem; */
+
 }
 
-.cart-link{
+.icons{
   display: flex;
-  gap:6px
+  flex-direction: row;
+  position: absolute;
+  right: 0;
+  padding-right: 5rem;
+}
+
+
+a{
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+}
+
+
+.fa-user  {
+  font-size: 24px; 
+  color: rgba(0, 0, 0, 0.578)
+
+}
+
+.fa-shopping-cart{
+  font-size: 22px;
+    color: rgba(0, 0, 0, 0.578);
+    padding-right: 5px;
+    
+}
+
+.profile-button{
+background-color: transparent;
+border: none;
+
+}
+
+.first-nav{
+  display: flex;
+  justify-content: flex-end;
+  /* position: relative; */
+  width: 100%;
+  margin-right: 5rem;
+ /* right: 8.5rem; */
+}
+
+.pink-img{
+  width: 100%;
+  position: absolute;
+  height: 12rem;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.main-nav{
+position: relative;
+}
+
+.nav h1{
+  color: #D4AF37;
+  font-family: Apple Chancery, cursive;
+  font-size: 3rem;
+}
+
+body{
+  margin: 0;
+  /* background-color: #ffb6c112; */
 }

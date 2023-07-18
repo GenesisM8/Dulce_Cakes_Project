@@ -3,7 +3,9 @@ display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 gap: 20px;
-margin: 6rem;
+justify-content: center;
+margin: 3rem;
+margin-top: 8rem;
 }
 
 .cake-img{
