@@ -21,7 +21,7 @@ const StarsRatingInput = ({ rating, disabled, onChange }) => {
                 className={activeRating >= number ? "filled" : "empty"}
                 {...props}
             >
-                <i class="fa-solid fa-star fa-xl"></i>
+                <i class="fas fa-star fa-xl"></i>
             </div>
         );
     };

@@ -23,7 +23,7 @@
 
 .single-review-container button {
     color: white;
-    background-color: black;
+    background-color:rgb(255, 172, 186);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,7 +61,7 @@
 
 .newReview button {
     color: white;
-    background-color: black;
+    background-color: rgb(245, 143, 160);
     justify-content: center;
     margin-top: 6px;
     height: 2rem;
@@ -71,7 +71,7 @@
     align-items: center;
     border-radius: 6px;
     margin-left: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 5rem;
     font-size: 14px;
 }
 
