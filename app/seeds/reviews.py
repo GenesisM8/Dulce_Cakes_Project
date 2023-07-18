@@ -6,21 +6,21 @@ def seed_reviews():
         userId = 2,
         rating = 5,
         review = "Absolutely divine cakes! Each bite is a taste of heaven. Highly recommend this cake business for all occasions.",
-        imageUrl= '/images/ScreenShot1'
+        imageUrl= 'https://s3-media0.fl.yelpcdn.com/bphoto/CUcJe7S-Vl4reFTIj_Gepw/o.jpg'
     )
 
     review2 = Review(
         userId = 2,
         rating = 5,
         review = "Deliciously moist and beautifully decorated cakes. You can't go wrong with their flavors and presentation. A must-try!",
-        imageUrl= "/images/ScreenShot2"
+        imageUrl= "https://s3-media0.fl.yelpcdn.com/bphoto/QCe_G4wpEMm9WEx3c7V04w/o.jpg"
     )
 
     review3 = Review(
         userId = 1,
-        rating = 5,
+        rating = 3,
         review = "Top-notch service and the cakes speak for themselves – pure perfection. So glad I found this gem of a cake business! ",
-        imageUrl='/images/ScreenShot3'
+        imageUrl='https://s3-media0.fl.yelpcdn.com/bphoto/8dkZArpAP_kK0yRB8-s-AQ/o.jpg'
     )
 
     

@@ -13,6 +13,8 @@ import HolidayCakes from "./components/Cakes/holidayCakes";
 import SingleCake from "./components/Cakes/singleCake";
 import Cart from "./components/Cart";
 import AddCartItem from "./components/Cart/addItem";
+import Reviews from "./components/Reviews";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -52,6 +54,9 @@ function App() {
         </Route>
          <Route exact path="/cart">
           <Cart/>
+        </Route>
+        <Route exact path="/reviews">
+          <Reviews/>
         </Route>
         </Switch>
       )}

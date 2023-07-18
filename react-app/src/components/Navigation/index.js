@@ -35,6 +35,7 @@ function Navigation({ isLoaded }){
 			<NavLink exact to="/cakes/numbers">Number Cakes</NavLink>
 			<NavLink exact to="/cakes/shapes">Shape Cakes</NavLink>
 			<NavLink exact to="/cakes/holiday">Holiday Cakes</NavLink>
+			<NavLink exact to="/reviews">Testimonials</NavLink>
 		</div>
 		</div>
 	);
