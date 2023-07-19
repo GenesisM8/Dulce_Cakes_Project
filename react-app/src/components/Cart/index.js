@@ -1,24 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, useHistory } from 'react-router-dom';
-import { thunkGetCartItems, thunkUpdateCartItemQuantity, thunkDeleteCartItem } from '../../store/cart';
-import './cart.css'
-
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink, useHistory } from "react-router-dom";
+import {
+  thunkGetCartItems,
+  thunkUpdateCartItemQuantity,
+  thunkDeleteCartItem,
+} from "../../store/cart";
+import "./cart.css";
 
 const colorDisplayNames = {
-  white: 'White',
-  pink: 'Light Pink',
-  hotPink: 'Hot Pink',
-  plum: 'Lavender',
-  blueviolet: 'Violet',
-  lightskyblue: 'Light Blue',
-  dodgerBlue: 'Blue',
-  turquoise: 'Turquoise',
-  lightgreen: 'Green',
-  gold: 'Yellow',
-  coral: 'Coral',
-  orangeRed: 'Red',
-  burlywood: 'Neutral',
+  white: "White",
+  pink: "Light Pink",
+  hotPink: "Hot Pink",
+  plum: "Lavender",
+  blueviolet: "Violet",
+  lightskyblue: "Light Blue",
+  dodgerBlue: "Blue",
+  turquoise: "Turquoise",
+  lightgreen: "Green",
+  gold: "Yellow",
+  coral: "Coral",
+  orangeRed: "Red",
+  burlywood: "Neutral",
 };
 
 const Cart = () => {
@@ -26,8 +29,6 @@ const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
   const sessionUser = useSelector((state) => state.session.user);
   const history = useHistory();
-
-
 
   useEffect(() => {
     dispatch(thunkGetCartItems());
@@ -51,17 +52,17 @@ const Cart = () => {
     dispatch(thunkDeleteCartItem(itemId));
   };
 
- const handleCompleteOrder = () => {
+  const handleCompleteOrder = () => {
     cartItems.forEach((item) => {
       dispatch(thunkDeleteCartItem(item.id));
     });
 
-  history.push('/orders');
+    history.push("/orders");
   };
 
   if (!cartItems || cartItems.length === 0 || !sessionUser) {
     return (
-      <div className='center-cart'>
+      <div className="center-cart">
         <h2>Your Cart</h2>
         <p>Your cart is currently empty</p>
         <NavLink exact to="/cakes">
@@ -72,7 +73,10 @@ const Cart = () => {
   }
 
   // Calculate the total amount
-  const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  const totalAmount = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 
   return (
     <div className="cart-container">
@@ -82,27 +86,38 @@ const Cart = () => {
             <>
               <div className="single-cart-item-container">
                 <div>
-                  <img src={item.cake.imageUrl} alt={item.cake.name} className="cake-img-cart" />
+                  <img
+                    src={item.cake.imageUrl}
+                    alt={item.cake.name}
+                    className="cake-img-cart"
+                  />
                 </div>
                 <div>
                   <p>{item.cake.name}</p>
-                  {item.cakeCharacter && <p>Character: {item.cakeCharacter.toUpperCase()}</p>}
+                  {item.cakeCharacter && (
+                    <p>Character: {item.cakeCharacter.toUpperCase()}</p>
+                  )}
                   <p>Size: {item.size}</p>
-                  {item.cake.category !== 'holiday' && ( // Condition to hide color for holiday items
+                  {item.cake.category !== "holiday" && ( // Condition to hide color for holiday items
                     <>
-                      {item.color2 ? (
-                        <p>
-                          Color: {colorDisplayNames[item.color]}, and {colorDisplayNames[item.color2]}
-                        </p>
-                      ) : (
-                        <p>
-                          Color: {colorDisplayNames[item.color]} {item.otherColor}
-                        </p>
+                      {item.color && (
+                        <>
+                          {item.color2 ? (
+                            <p>
+                              Color: {colorDisplayNames[item.color]}, and{" "}
+                              {colorDisplayNames[item.color2]}
+                            </p>
+                          ) : (
+                            <p>Color: {colorDisplayNames[item.color]}</p>
+                          )}
+                        </>
                       )}
+                      {item.otherColor && <p>Other Color: {item.otherColor}</p>}
                     </>
                   )}
+    
                   <p>Cream Flavor: {item.flavor}</p>
-                  
+
                   {item.glutenFree && <p>Base option: {item.glutenFree}</p>}
                 </div>
                 <div>
@@ -110,14 +125,20 @@ const Cart = () => {
                 </div>
                 <div>
                   <p>Quantity: {item.quantity}</p>
-                  <button onClick={() => handleQuantityDecrease(item.id)}>-</button>
-                  <button onClick={() => handleQuantityIncrease(item.id)}>+</button>
+                  <button onClick={() => handleQuantityDecrease(item.id)}>
+                    -
+                  </button>
+                  <button onClick={() => handleQuantityIncrease(item.id)}>
+                    +
+                  </button>
                 </div>
                 <div>
                   <p>Total: ${item.price * item.quantity}.00</p>
                 </div>
                 <div>
-                  <button onClick={() => handleDeleteItem(item.id)}>Remove</button>
+                  <button onClick={() => handleDeleteItem(item.id)}>
+                    Remove
+                  </button>
                 </div>
               </div>
             </>
@@ -128,21 +149,12 @@ const Cart = () => {
       <div className="cart-summary">
         <h2>Cart Summary</h2>
         <p>Total Amount: ${totalAmount}.00</p>
-         <div>
-        <button onClick={handleCompleteOrder} >Complete Order</button> 
+        <div>
+          <button onClick={handleCompleteOrder}>Complete Order</button>
+        </div>
       </div>
-      </div>
-     
     </div>
   );
 };
 
-export default Cart
-
-
-
-
-
-
-
-
+export default Cart;
