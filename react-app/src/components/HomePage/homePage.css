@@ -1,13 +1,23 @@
-.home-img{
-
+.home-img {
     width: 100%;
     height: 38rem;
-    object-fit:cover;
+    object-fit: cover;
+    position: absolute;
+    transition: opacity 1.7s ease-in-out;
 }
 
-.img-container{
+.img-container {
     height: 38rem;
     width: 100%;
     margin-bottom: 6rem;
- 
+    position: relative;
 }
+
+.active {
+    opacity: 1.3;
+}
+
+.inactive {
+    opacity: 0;
+}
+

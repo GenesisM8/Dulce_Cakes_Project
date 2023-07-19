@@ -10,10 +10,9 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
- margin-top: 4rem;
+  margin-top: 4rem;
   position: relative;
-   
-    z-index: 9999;
+  z-index: 9999;
   
 }
 
@@ -22,9 +21,10 @@
   flex-direction: row;
   justify-content: space-around;
   margin-top: 3.5rem;
-  gap: 30px;
+  gap: 14.5rem;
   margin-bottom: 4rem;
-
+  margin-left: 30px;
+position: relative;
 }
 
 .nav{
@@ -89,7 +89,8 @@ border: none;
   display: flex;
   flex-direction: column;
   height: 19rem;
-   
+  font-family: "Avenir Next", sans-serif;
+  font-size: 15px;
 }
 
 
@@ -107,38 +108,37 @@ body{
     background-position: bottom center 0;
     background-repeat: no-repeat;
     z-index: 1;
+    font-family: "Avenir Next", sans-serif;
 }
 
 .category-down{
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 15px;
   margin-top: 10px;
-  border: 1px solid gray;
+  background-color: white;
+  width: 10rem;
+  height: 12rem;
+  padding: 12px;
+  justify-content: center;
 }
 
-.order-nav{
-
-}
-
-.order-dropdown {
-  display: inline-block;
-  position: relative;
-  z-index: 999;
-}
-
-.order-dropdown .category-down {
-  display: none;
+.sub-nav>details {
   position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  z-index: 999;
+  left: 37%;
+  
 }
 
-.order-dropdown:hover .category-down {
-  display: block;
+.sub-nav:hover{
+  cursor: pointer;
+  
 }
 
+details>summary::marker {
+color: lightgrey;
+}
+
+.home-text{
+  font-family: "Avenir Next", sans-serif;
+  font-size: 15px;
+}
