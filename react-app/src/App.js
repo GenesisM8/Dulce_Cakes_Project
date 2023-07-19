@@ -14,6 +14,7 @@ import SingleCake from "./components/Cakes/singleCake";
 import Cart from "./components/Cart";
 import HomePage from "./components/HomePage";
 import Reviews from "./components/Reviews";
+import Orders from "./components/Orders";
 
 
 function App() {
@@ -61,7 +62,9 @@ function App() {
         <Route exact path="/reviews">
           <Reviews/>
         </Route>
-        
+         <Route exact path="/orders">
+          <Orders/>
+        </Route>
         </Switch>
       )}
     </>

@@ -20,7 +20,6 @@ class Cartitem(db.Model):
     cakeCharacter = db.Column(db.String(10), nullable=False)
     glutenFree = db.Column(db.String)
     foodAllergens = db.Column(db.String(100))
-    # coments = db.Column(db.String(250))
     price = db.Column(db.Integer, nullable=False)
     total = db.Column(db.Integer, nullable=False)
 

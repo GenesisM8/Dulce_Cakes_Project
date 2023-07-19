@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { thunkGetCartItems, thunkUpdateCartItemQuantity, thunkDeleteCartItem } from '../../store/cart';
 
-// Define color display names (assuming you have this somewhere)
+
 const colorDisplayNames = {
   white: 'White',
   pink: 'Light Pink',
@@ -23,6 +23,9 @@ const colorDisplayNames = {
 const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
+  const history = useHistory();
+
+
 
   useEffect(() => {
     dispatch(thunkGetCartItems());
@@ -44,6 +47,14 @@ const Cart = () => {
 
   const handleDeleteItem = (itemId) => {
     dispatch(thunkDeleteCartItem(itemId));
+  };
+
+ const handleCompleteOrder = () => {
+    cartItems.forEach((item) => {
+      dispatch(thunkDeleteCartItem(item.id));
+    });
+
+  history.push('/orders');
   };
 
   if (!cartItems || cartItems.length === 0) {
@@ -116,11 +127,14 @@ const Cart = () => {
         <h2>Cart Summary</h2>
         <p>Total Amount: ${totalAmount}.00</p>
       </div>
+      <div>
+        <button onClick={handleCompleteOrder} >Complete Order</button> 
+      </div>
     </div>
   );
 };
 
-export default Cart;
+export default Cart
 
 
 
