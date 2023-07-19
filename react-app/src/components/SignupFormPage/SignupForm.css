@@ -1,0 +1,101 @@
+.sign-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+
+.sign-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 26rem;
+    gap: 20px;
+
+}
+
+.form-small-container{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-family: "Avenir Next", sans-serif;
+    letter-spacing: .065em;
+    color: #212121da;
+    font-size: 14px;
+   
+
+}
+
+.sign-input{
+    height:40px;
+    border: 1px solid lightgrey;
+    outline: none;
+    font-size: 14px;
+    padding-left: 18px;
+    color: #212121da;
+    font-family: "Avenir Next", sans-serif;
+}
+
+
+.sign-container h1{
+    font-family: "Monotype Bodoni", serif;
+    font-weight:10;
+    color: #212121c6;
+    font-size: 27px;
+    letter-spacing: .055em;
+    padding-top: 1rem;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+}
+
+.sign-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding-top: 5px;
+}
+
+.sign-buttons button{
+    height: 3rem;
+    width: 6rem;
+}
+
+.button-left{
+background-color: rgba(250, 215, 220, 0.681);
+border: none;
+color: #212121da;
+font-family: "Avenir Next", sans-serif;
+letter-spacing: .065em;
+}
+
+.button-right{
+border: 3px solid rgba(250, 215, 220, 0.681) ;
+background-color: white;
+color: #212121da;
+font-family: "Avenir Next", sans-serif;
+    letter-spacing: .065em;
+}
+
+.demo-user button {
+    background-color: white;
+    color: #212121da;
+    border: none;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 14px;
+    letter-spacing: .050em;
+    border-bottom: 2px solid rgba(250, 215, 220, 0.681);
+    margin-bottom: 10px; 
+    margin-top: 3px;
+}
+
+.sign-container button:hover{
+    cursor: pointer;
+}
+
+.signError{
+    color: #d32f2f;
+    font-family: "Avenir Next", sans-serif;
+    padding-top: 1rem;
+}

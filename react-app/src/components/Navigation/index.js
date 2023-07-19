@@ -57,6 +57,7 @@ function Navigation({ isLoaded }) {
                         <summary>ORDER</summary>
                         <div className='category-down'>
                             <NavLink
+                                className="inner-menu"
                                 exact
                                 to="/cakes"
                                 onClick={() => setIsMenuOpen(false)}
@@ -64,9 +65,11 @@ function Navigation({ isLoaded }) {
                                 See all
                             </NavLink>
                             <NavLink
+
                                 exact
                                 to="/cakes/letters"
                                 onClick={() => setIsMenuOpen(false)}
+                                className="inner-menu"
                             >
                                 Letter Cakes
                             </NavLink>
@@ -74,6 +77,7 @@ function Navigation({ isLoaded }) {
                                 exact
                                 to="/cakes/numbers"
                                 onClick={() => setIsMenuOpen(false)}
+                                className="inner-menu"
                             >
                                 Number Cakes
                             </NavLink>
@@ -81,6 +85,7 @@ function Navigation({ isLoaded }) {
                                 exact
                                 to="/cakes/shapes"
                                 onClick={() => setIsMenuOpen(false)}
+                                className="inner-menu"
                             >
                                 Shape Cakes
                             </NavLink>
@@ -88,6 +93,7 @@ function Navigation({ isLoaded }) {
                                 exact
                                 to="/cakes/holiday"
                                 onClick={() => setIsMenuOpen(false)}
+                                className="inner-menu"
                             >
                                 Holiday Cakes
                             </NavLink>
