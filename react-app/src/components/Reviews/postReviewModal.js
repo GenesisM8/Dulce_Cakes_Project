@@ -48,9 +48,9 @@ function ReviewModal() {
 
   return (
     <>
-      <div >
+      <div className="reviewContainer">
         <form className="reviewForm" onSubmit={handleSubmit}>
-          <h3>Tell us how we did</h3>
+          {/* <h3>Tell us how we did</h3> */}
           {Boolean(Object.values(errors).length) && (
             <div className="errorContainer">
               {Object.values(errors).map((errorMsg, index) => (

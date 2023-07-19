@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useHistory } from 'react-router-dom';
 import { thunkGetCartItems, thunkUpdateCartItemQuantity, thunkDeleteCartItem } from '../../store/cart';
+import './cart.css'
 
 
 const colorDisplayNames = {
@@ -23,6 +24,7 @@ const colorDisplayNames = {
 const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
+  const sessionUser = useSelector((state) => state.session.user);
   const history = useHistory();
 
 
@@ -57,13 +59,13 @@ const Cart = () => {
   history.push('/orders');
   };
 
-  if (!cartItems || cartItems.length === 0) {
+  if (!cartItems || cartItems.length === 0 || !sessionUser) {
     return (
-      <div>
+      <div className='center-cart'>
         <h2>Your Cart</h2>
         <p>Your cart is currently empty</p>
         <NavLink exact to="/cakes">
-          Click here to continue shopping
+          <p>Click here to continue shopping</p>
         </NavLink>
       </div>
     );
@@ -126,10 +128,11 @@ const Cart = () => {
       <div className="cart-summary">
         <h2>Cart Summary</h2>
         <p>Total Amount: ${totalAmount}.00</p>
-      </div>
-      <div>
+         <div>
         <button onClick={handleCompleteOrder} >Complete Order</button> 
       </div>
+      </div>
+     
     </div>
   );
 };

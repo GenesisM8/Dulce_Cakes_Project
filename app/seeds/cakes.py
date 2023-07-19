@@ -4,7 +4,7 @@ from sqlalchemy.sql import text
 def seed_cakes():
   
     cake1 = Cake(
-        name = "Single Letter Cake",
+        name = "Letter Cake",
         category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 89,
@@ -14,7 +14,7 @@ def seed_cakes():
     )
 
     cake2 = Cake(
-        name = "Single Letter Cake",
+        name = "Letter Cake",
         category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 89,
@@ -25,7 +25,7 @@ def seed_cakes():
 
 
     cake3 = Cake(
-        name = "Single Letter Cake",
+        name = "Letter Cake",
         category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
         smallPrice = 89,
@@ -35,110 +35,110 @@ def seed_cakes():
     )
 
     cake4 = Cake(
-        name = "Double Letters Cake",
+        name = "Letter Cake",
         category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 95,
-        mediumPrice = 135,
-        largePrice = 185,
+        smallPrice = 89,
+        mediumPrice = 130,
+        largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2023/03/Frudeco-Feb-04-29-800x800.jpg"
     )
 
     cake5 = Cake(
-        name = "Double Letters Cake",
+        name = "Letter Cake",
         category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 95,
-        mediumPrice = 135,
-        largePrice = 185,
+        smallPrice = 89,
+        mediumPrice = 130,
+        largePrice = 180,
         imageUrl = "https://i.pinimg.com/564x/0d/6d/d5/0d6dd5d0dce6edd3c875e5d2c49254d9.jpg"
     )
 
     cake6 = Cake(
-        name = "Three letters Cake",
+        name = "Letter Cake",
         category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 110,
-        mediumPrice = 160,
-        largePrice = 195,
+        smallPrice = 89,
+        mediumPrice = 130,
+        largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2023/03/Frudeco-Feb-04-44-800x800.jpg"
     )
 
     cake7 = Cake(
-        name = "Three letters Cake",
+        name = "Letter Cake",
         category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 110,
-        mediumPrice = 160,
-        largePrice = 195,
+        smallPrice = 89,
+        mediumPrice = 130,
+        largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2023/03/Frudeco-Feb-04-8-800x800.jpg"
     )
 
     cake8 = Cake(
-        name = "Three letters Cake",
+        name = "Letter Cake",
         category = "letters",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 110,
-        mediumPrice = 160,
-        largePrice = 195,
+        smallPrice = 89,
+        mediumPrice = 130,
+        largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2023/05/Frudeco-April-0-800x800.jpeg"
     )
 
     cake9 = Cake(
-        name = "Single Number Cake",
+        name = "Number Cake",
         category = "numbers",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 85,
+        smallPrice = 89,
         mediumPrice = 130,
         largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2022/10/IMG_3316-800x800.jpg"
     )
 
     cake10 = Cake(
-        name = "Single Number Cake",
+        name = "Number Cake",
         category = "numbers",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 85,
+        smallPrice = 89,
         mediumPrice = 130,
         largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2022/10/IMG_3283-800x800.jpg"
     )
 
     cake11 = Cake(
-        name = "Single Number Cake",
+        name = "Number Cake",
         category = "numbers",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 85,
+        smallPrice = 89,
         mediumPrice = 130,
         largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2023/06/Frudeco-June-16-e1687974356483.jpeg"
     )
 
     cake12 = Cake(
-        name = "Single Number Cake",
+        name = "Number Cake",
         category = "numbers",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 85,
+        smallPrice = 89,
         mediumPrice = 130,
         largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2023/03/Frudeco-Feb-04-21-e1679889773764-800x800.jpg"
     )
 
     cake13 = Cake(
-        name = "Double Number Cake",
+        name = "Number Cake",
         category = "numbers",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 85,
+        smallPrice = 89,
         mediumPrice = 130,
         largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2022/10/IMG_3324.jpg"
     )
 
     cake14 = Cake(
-        name = "Double Number Cake",
+        name = "Number Cake",
         category = "numbers",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 85,
+        smallPrice = 89,
         mediumPrice = 130,
         largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2023/03/Frudeco-Feb-04-48-800x800.jpg"
@@ -148,7 +148,7 @@ def seed_cakes():
         name = "Crown Shape Cake",
         category = "shapes",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 85,
+        smallPrice = 89,
         mediumPrice = 130,
         largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2022/10/IMG_3312-800x800.jpg"
@@ -158,7 +158,7 @@ def seed_cakes():
         name = "Butterfly Shape Cake",
         category = "shapes",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 85,
+        smallPrice = 89,
         mediumPrice = 130,
         largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2023/03/DSC07456-600x875-1.jpg"
@@ -168,7 +168,7 @@ def seed_cakes():
         name = "Pineapple Shape Cake",
         category = "shapes",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 85,
+        smallPrice = 89,
         mediumPrice = 130,
         largePrice = 180,
         imageUrl = "https://i.pinimg.com/564x/bb/b3/09/bbb3096b366bec11bea4f39257f6a8e4.jpg"
@@ -178,7 +178,7 @@ def seed_cakes():
         name = "TKS giving Cake",
         category = "holiday",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 85,
+        smallPrice = 89,
         mediumPrice = 130,
         largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2022/11/Frudeco-Sesion-Oct-28-800x800.jpg"
@@ -188,7 +188,7 @@ def seed_cakes():
         name = "Christmas Santa Hat Cake",
         category = "holiday",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 85,
+        smallPrice = 89,
         mediumPrice = 130,
         largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2021/12/IMG_7009-copy-scaled-800x800.jpg"
@@ -198,7 +198,7 @@ def seed_cakes():
         name = "Christmas Stocking Cake",
         category = "holiday",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 85,
+        smallPrice = 89,
         mediumPrice = 130,
         largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2021/12/IMG_6985-copy-1-scaled-800x800.jpg"
@@ -208,7 +208,7 @@ def seed_cakes():
         name = "Christmas Tree Cake",
         category = "holiday",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 85,
+        smallPrice = 89,
         mediumPrice = 130,
         largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2022/11/Frudeco-December-Zone-VII-23-800x800.jpg"
@@ -218,7 +218,7 @@ def seed_cakes():
         name = "Father's Day Cake",
         category = "holiday",
         description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 85,
+        smallPrice = 89,
         mediumPrice = 130,
         largePrice = 180,
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2022/06/IMG_3301-800x800.jpg"

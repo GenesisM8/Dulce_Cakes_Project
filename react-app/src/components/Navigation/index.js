@@ -61,7 +61,7 @@ function Navigation({ isLoaded }) {
                                 to="/cakes"
                                 onClick={() => setIsMenuOpen(false)}
                             >
-                                All Cakes
+                                See all
                             </NavLink>
                             <NavLink
                                 exact

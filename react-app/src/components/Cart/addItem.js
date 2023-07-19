@@ -118,10 +118,10 @@ const AddCartItem = ({ cakeId, cake }) => {
   const availableColors = ['white', 'pink', 'hotPink', 'plum', 'blueviolet', 'lightskyblue', 'dodgerBlue', 'turquoise', 'lightgreen', 'gold', 'coral', 'orangeRed', 'burlywood'];
 
   const renderCakeCharacterInput = () => {
-    if (cake.category === 'letters' && cake.name === 'Single Letter Cake') {
+    if (cake.category === 'letters' ) {
       return (
         <label>
-          Choice of letter: 
+          Choice of letter(s): 
           <input
             type="text"
             value={cakeCharacter}
@@ -129,28 +129,16 @@ const AddCartItem = ({ cakeId, cake }) => {
             maxLength={3}
             required
             placeholder='max 3 characters'
+            pattern="[A-Za-z]*"
+            title="Please enter a valid letter."
             onInvalid={(e) => e.target.setCustomValidity('Please enter your desired letter.')}
             onInput={(e) => e.target.setCustomValidity('')}
           />
         </label>
       );
-    } else if (cake.category === 'letters' && (cake.name === 'Double Letters Cake' || cake.name === 'Three letters Cake')) {
-      return (
-        <label>
-          Choice of letters: 
-          <input
-            type="text"
-            value={cakeCharacter}
-            onChange={(e) => setCakeCharacter(e.target.value)}
-            maxLength={3}
-            placeholder='max 3 characters'
-            required
-            onInvalid={(e) => e.target.setCustomValidity('Please enter your desired letters.')}
-            onInput={(e) => e.target.setCustomValidity('')}
-          />
-        </label>
-      );
-    } else if (cake.category === 'numbers') {
+    } 
+   
+     else if (cake.category === 'numbers') {
       return (
         <label>
           Choice of number: 
