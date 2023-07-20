@@ -1,5 +1,33 @@
 .profile-dropdown {
-  position: relative;
+  position: absolute;
+  border: 2px solid red ;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 11rem;
+  height: 6rem;
+  z-index: 1;
+  
+}
+
+.profile-icon{
+  width: 1.5rem;
+  height: 1.5rem;
+  /* border: 2px solid blue; */
+  position: absolute;
+    top: 2.5rem;
+    right: -2.5rem;
+    position: absolute;
+    z-index: 999;
+}
+
+.profile-icon:hover{
+cursor: pointer;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
 }
 
 .hidden {
@@ -10,7 +38,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   position: relative;
   z-index: 1;
   
@@ -19,34 +47,39 @@
 .sub-nav{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin-top: 3rem;
-  gap: 14.5rem;
-  color: #212121da;
+  justify-content: center;
+  /* margin-top: 3rem; */
+  gap: 3rem;
   margin-left: 30px;
 position: relative;
+/* height: 4rem; */
+margin-top: 10px;
 }
+
 
 .nav{
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 1rem;
-  height: 6rem;
+  height: 14rem;
   align-items: center;
   width: 100%;
  
-/* padding-right: 6rem; */
-
 }
 
 .icons{
   display: flex;
   flex-direction: row;
   position: absolute;
-  right: 0;
-  padding-right: 5rem;
-  padding-top: 8rem;
+  align-items: center;
+  justify-content: flex-end;
+  right: 8rem;
+  margin-top: 15.2rem;
+  /* gap: 5px; */
+  height:10rem;
+  /* padding-right: 5rem;
+  padding-top: 8rem; */
 }
 
 
@@ -79,7 +112,7 @@ border: none;
 .logo{
   width: 23rem;
   height: 17rem;
- margin-top: 8rem;
+ margin-top: 1rem;
 
 }
 
@@ -90,20 +123,14 @@ border: none;
   flex-direction: column;
   height: 17.5rem;
   font-family: "Avenir Next", sans-serif;
-  font-size: 14.5px;
-  letter-spacing: .055em;
+  font-size: 15px;
   position: relative;
     /* Add position: relative; */
     z-index: 2;
+    margin-bottom: 1rem;
 }
 
 
-
-.nav h1{
-  color: #D4AF37;
-  font-family: Apple Chancery, cursive;
-  font-size: 3rem;
-}
 
 body{
     margin: 0;
@@ -125,14 +152,11 @@ body{
   height: 12rem;
   padding: 12px;
   justify-content: center;
-    color: #212121da;
-    font-family: "Avenir Next", sans-serif;
-    font-size: 13px;
 }
 
-.sub-nav>details{
+.sub-nav>details {
   position: absolute;
-  left: 37%;
+  left: 39%;
   
 }
 
@@ -141,20 +165,35 @@ body{
   
 }
 
-
 details>summary::marker {
 color: lightgrey;
 }
 
 .home-text{
   font-family: "Avenir Next", sans-serif;
-  font-size: 14.5px;
-  letter-spacing: .075em;
-  color: #212121da;
+  font-size: 15px;
+  padding-left: 2rem;
+ /* padding-left: 5rem; */
 }
 
-.inner-menu{
-  color: #212121da;
+.testi{
   font-family: "Avenir Next", sans-serif;
   font-size: 15px;
+  margin-left: 10rem;
+}
+
+.cart{
+  font-family: "Avenir Next", sans-serif;
+    font-size: 15px;
+    position: absolute;
+      z-index: 999;
+    margin-left: 10px;
+    /* padding-top: 5rem; */
+    /* padding-left: 17rem; */
+}
+
+.move-left{
+  padding-right: 3rem;
+  padding-top: 2rem;
+  margin-right: 2rem;
 }

@@ -78,6 +78,13 @@ font-family: "Avenir Next", sans-serif;
     letter-spacing: .065em;
 }
 
+.button-left:disabled{
+    background-color: rgba(250, 215, 220, 0.681);
+    color: #212121da;
+    border: none;
+}
+
+
 .demo-user button {
     background-color: white;
     color: #212121da;

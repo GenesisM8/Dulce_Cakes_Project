@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import logo from "../../assets/logo.png"
-import background from "../../assets/background.png"
+
 
 function Navigation({ isLoaded }) {
     const sessionUser = useSelector(state => state.session.user);
@@ -30,16 +30,17 @@ function Navigation({ isLoaded }) {
                 
                 <div className='icons'>
                     {isLoaded && (
-                        <div>
-                            <ProfileButton user={sessionUser} />
+                        <div className='move-left'>
+                            <ProfileButton user={sessionUser} className="profile-icon" />
                         </div>
                     )}
-                    <div>
-                        <NavLink exact to="/cart">
-                            <i className="fas fa-shopping-cart"></i>
-                            {totalCartItems > 0 && <span className="cart-item-count">({totalCartItems})</span>}
+
+                     <div>
+                        <NavLink exact to="/cart" className="cart">
+                            <div>CART {totalCartItems > 0 && <span className='cart'>({totalCartItems})</span>}</div>
                         </NavLink>
                     </div>
+                   
                 </div>
             </div>
 
@@ -100,10 +101,12 @@ function Navigation({ isLoaded }) {
                         </div>
                     </details>
 					<div>
-						<NavLink exact to="/reviews" className='home-text'>TESTIMONIALS</NavLink>
+						<NavLink exact to="/reviews" className='testi'>TESTIMONIALS</NavLink>
 					</div>
                     
                 </div>
+
+                
             </div>
         </div>
     );

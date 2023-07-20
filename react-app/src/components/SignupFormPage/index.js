@@ -23,11 +23,12 @@ function SignupFormPage() {
     if (firstName.length === 0) errors.firstName = "";
     if (lastName.length === 0) errors.lastName = "";
     if (password.length === 0 || password.length < 6) errors.password = "";
-    if (confirmPassword.length === 0 || confirmPassword.length < 6)
-      errors.confirmPassword = "";
+    // if (confirmPassword.length === 0 || confirmPassword.length < 6)
+    //   errors.confirmPassword = "";
     if (password.length < 6 && password.length > 0)
       errors.password = "Password needs to be at least 6 characters.";
-
+    // if (confirmPassword.length < 6 && confirmPassword.length > 0)
+    //   errors.confirmPassword = "Confirm Password needs to be at least 6 characters.";
     setErrors(errors);
   }, [email, firstName, lastName, password, confirmPassword]);
 
@@ -127,7 +128,7 @@ function SignupFormPage() {
             </label>
           </div>
           <div className="sign-buttons">
-            <button type="submit" className="button-left">SIGN UP</button>
+            <button type="submit" className="button-left" disabled={Boolean(Object.values(errors).length)}>SIGN UP</button>
             <NavLink exact to="/login">
               <button className="button-right">LOG IN</button>
             </NavLink>

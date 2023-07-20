@@ -6,6 +6,7 @@ import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "./Navigation.css";
+import userImg from "../../assets/user.png"
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -57,13 +58,18 @@ function ProfileButton({ user }) {
   return (
     <>
       <button onClick={openMenu} className="profile-button">
-       <i className="fa fa-user "></i>
+       {/* <i className="fa fa-user "></i> */}
+       <img src={userImg} alt="user-icon" className="profile-icon"/>
       </button>
       <div className={ulClassName} ref={ulRef}>
         {user ? (
           <>
             
-            <div>Hello, {user.firstName} {user.lastName}</div>
+            <div>Hello, 
+              <div>
+                {user.firstName} {user.lastName}</div>
+              </div>
+              
             <div>
               <button onClick={handleLogout}>Log Out</button>
             </div>
