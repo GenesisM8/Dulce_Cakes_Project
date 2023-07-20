@@ -42,8 +42,8 @@ def update_cart_item_quantity(itemId):
     data = request.get_json()
     quantity = data.get('quantity')
 
-    if not quantity or type(quantity) is not int:
-        return {"error": "Invalid quantity"}, 400
+    # if not quantity or type(quantity) is not int:
+    #     return {"error": "Invalid quantity"}, 400
 
     cart_item.quantity = quantity
     db.session.commit()
