@@ -88,8 +88,9 @@ font-family: "Avenir Next", sans-serif;
 .demo-user button {
     background-color: white;
     color: #212121da;
-    border: none;
     font-family: "Avenir Next", sans-serif;
+    border: none;
+    
     font-size: 14px;
     letter-spacing: .050em;
     border-bottom: 2px solid rgba(250, 215, 220, 0.681);
@@ -106,3 +107,4 @@ font-family: "Avenir Next", sans-serif;
     font-family: "Avenir Next", sans-serif;
     padding-top: 1rem;
 }
+

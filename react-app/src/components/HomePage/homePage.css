@@ -1,15 +1,15 @@
 .home-img {
     width: 100%;
-    height: 38rem;
+    height: 32rem;
     object-fit: cover;
     position: absolute;
     transition: opacity 1.7s ease-in-out;
 }
 
 .img-container {
-    height: 38rem;
+    height: 32rem;
     width: 100%;
-    margin-bottom: 6rem;
+    /* margin-bottom: 6rem; */
     position: relative;
 }
 
@@ -20,4 +20,5 @@
 .inactive {
     opacity: 0;
 }
+
 

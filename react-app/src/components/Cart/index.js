@@ -24,6 +24,7 @@ const colorDisplayNames = {
   burlywood: "Neutral",
 };
 
+
 const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -80,77 +81,99 @@ const Cart = () => {
 
   return (
     <div className="cart-container">
-      {cartItems.map((item) => (
-        <div key={item.id}>
-          {item.cake && (
-            <>
-              <div className="single-cart-item-container">
-                <div>
-                  <img
-                    src={item.cake.imageUrl}
-                    alt={item.cake.name}
-                    className="cake-img-cart"
-                  />
-                </div>
-                <div>
-                  <p>{item.cake.name}</p>
-                  {item.cakeCharacter && (
-                    <p>Character: {item.cakeCharacter.toUpperCase()}</p>
-                  )}
-                  <p>Size: {item.size}</p>
-                  {item.cake.category !== "holiday" && ( // Condition to hide color for holiday items
-                    <>
-                      {item.color && (
-                        <>
-                          {item.color2 ? (
-                            <p>
-                              Color: {colorDisplayNames[item.color]}, and{" "}
-                              {colorDisplayNames[item.color2]}
-                            </p>
-                          ) : (
-                            <p>Color: {colorDisplayNames[item.color]}</p>
-                          )}
-                        </>
-                      )}
-                      {item.otherColor && <p>Other Color: {item.otherColor}</p>}
-                    </>
-                  )}
-    
-                  <p>Cream Flavor: {item.flavor}</p>
+      <h1>Your Cart</h1>
+      <div className="cart-lebels">
+        <p>PRICE</p>
+        <p>QUANTITY</p>
+        <p>TOTAL</p>
+      </div>
+      <div className="iner-container-cart">
+        <div> </div>
+        {cartItems.map((item) => (
+          <div key={item.id} className="single-cart-item-container" >
+            {item.cake && (
+              <> 
+                  <div className="cart-left" >
+                    <div >
+                      <NavLink exact to ={`/cakes/${item.cakeId}`}>
+                       <img
+                      src={item.cake.imageUrl}
+                      alt={item.cake.name}
+                      className="cake-img-cart"
+                    /> 
+                      </NavLink>
+                    
+                  </div>
+                  <div className="details">
+                    {item.cakeCharacter && (
+                      <p className="cake-name">{item.cake.name} ({item.cakeCharacter.toUpperCase()})</p>
+                    )}
+                    {!item.cakeCharacter && (<p className="cake-name">{item.cake.name} </p>)}
+                      <p>
+                        {item.size} / {item.flavor} / {item.glutenFree} Base.
+                      </p>
+                
 
-                  {item.glutenFree && <p>Base option: {item.glutenFree}</p>}
-                </div>
-                <div>
-                  <p>Price: ${item.price}.00</p>
-                </div>
-                <div>
-                  <p>Quantity: {item.quantity}</p>
-                  <button onClick={() => handleQuantityDecrease(item.id)}>
-                    -
-                  </button>
-                  <button onClick={() => handleQuantityIncrease(item.id)}>
-                    +
-                  </button>
-                </div>
-                <div>
-                  <p>Total: ${item.price * item.quantity}.00</p>
-                </div>
-                <div>
-                  <button onClick={() => handleDeleteItem(item.id)}>
-                    Remove
-                  </button>
-                </div>
-              </div>
-            </>
-          )}
-        </div>
-      ))}
+                    {item.cake.category !== "holiday" && ( // Condition to hide color for holiday items
+                      <>
+                        {item.color && (
+                          <>
+                            {item.color2 ? (
+                              <p>
+                                Color: {colorDisplayNames[item.color]}, and{" "}
+                                {colorDisplayNames[item.color2]}.
+                              </p>
+                            ) : (
+                              <p>Color: {colorDisplayNames[item.color]}.</p>
+                            )}
+                          </>
+                        )}
+                        {item.otherColor && (
+                          <p>Other Color: {item.otherColor}</p>
+                        )}
+                      </>
+                    )}
+                    <p>
+                      
+                    </p>
+                    </div>
+                  </div>
 
+  <div className="numbers">
+                  <div className="quantity-container">
+                    <p>${item.price}.00</p>
+                  </div>
+                  <div className="quantity-container">
+                    <div className="quantity">
+        
+                      <button onClick={() => handleQuantityDecrease(item.id)} className="menos">
+                        -
+                      </button>
+                      <p className="numero">{item.quantity}</p>
+                      <button onClick={() => handleQuantityIncrease(item.id)}>
+                        +
+                      </button>
+                    </div>
+                    <div className="remove">
+                      <button onClick={() => handleDeleteItem(item.id)}>
+                        REMOVE
+                      </button>
+                    </div>
+                  </div>
+                  <div className="quantity-container">
+                    <p>${item.price * item.quantity}.00</p>
+                  </div>
+                </div>      
+              </>
+            )}
+          </div>
+        ))}
+      </div>
       <div className="cart-summary">
-        <h2>Cart Summary</h2>
-        <p>Total Amount: ${totalAmount}.00</p>
+        <h2>Total</h2>
+        <p>${totalAmount}.00</p>
         <div>
-          <button onClick={handleCompleteOrder}>Complete Order</button>
+          <button onClick={handleCompleteOrder}>CHECKOUT</button>
         </div>
       </div>
     </div>

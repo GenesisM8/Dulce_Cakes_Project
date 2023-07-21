@@ -32,6 +32,7 @@ const HomePage = () => {
                         className={`home-img ${index === currentImageIndex ? "active" : "inactive"}`}
                     />
                 ))}
+
             </div>
         </div>
     );

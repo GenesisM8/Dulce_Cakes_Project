@@ -15,6 +15,7 @@ import Cart from "./components/Cart";
 import HomePage from "./components/HomePage";
 import Reviews from "./components/Reviews";
 import Orders from "./components/Orders";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -67,6 +68,7 @@ function App() {
         </Route>
         </Switch>
       )}
+      <Footer/>
     </>
   );
 }

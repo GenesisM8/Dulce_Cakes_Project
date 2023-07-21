@@ -1,0 +1,24 @@
+.footer-container{
+    background-color:rgba(250, 215, 220, 0.447) ;
+    height: 5.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 4em;
+    padding-right: 4rem;
+    /* margin-top: 4rem; */
+   
+}
+
+.git{
+    background-color:#212121ab;
+    border-radius: 4rem;
+    height: 2rem;
+}
+
+.name {
+    color: #212121da;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 16px;
+}

@@ -1,111 +1,292 @@
-.form-container{
-    display: flex;
-    flex-direction: column;
-    margin-left: 3rem;
-    gap: 15px;
-   
-margin-top: -3rem;
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3rem;
+  gap: 15px;
+
+  margin-top: -3rem;
 }
 
-
-
-.cart-container{
-display: flex;
-flex-direction: column;
-gap: 5rem;
-justify-content: center;
-margin-top: 4rem;
-
-
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  margin-left: 8rem;
+  margin-right: 5rem;
+  width: 80%;
+  /* border: 1px solid purple; */
 }
-.cake-img-cart{
-    height: 9rem;
-    width: 9rem;
+
+.cart-lebels {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  gap: 74px;
+  margin-right: 4.5rem;
+  /* border: 1px solid pink; */
+  color: #212121da;
+  font-family: "Avenir Next", sans-serif;
+  font-size: 14px;
+    letter-spacing: .045em;
 }
-.single-cart-item-container{
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    height: 15rem;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+
+.cart-container h1 {
+  font-family: "Monotype Bodoni", serif;
+  font-weight: 10;
+  color: #212121c6;
+  font-size: 27px;
+  letter-spacing: 0.055em;
+  margin-bottom: 4rem;
+  margin-left: 2rem;
+}
+.cake-img-cart {
+  height: 7.6rem;
+  width: 7.5rem;
+  margin-top: 1rem;
+}
+
+.single-cart-item-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  height: 12rem;
+  justify-content: space-between;
+  align-items: center;
+  /* width:55rem; */
+  width: 100%;
+  /* border: 1px solid red; */
+  border-bottom: 1px solid lightgray;
 }
 
 .radio-buttons {
-    display: flex;
-    gap: 10px;
-    align-content: center;
-    justify-content: center;
-
+  display: flex;
+  gap: 10px;
+  align-content: center;
+  justify-content: center;
 }
 
 .radio-button {
-    display: flex;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 0;
-    cursor: pointer;
-    align-content: center;
-    justify-content: center;
+  display: flex;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  cursor: pointer;
+  align-content: center;
+  justify-content: center;
 }
 
 input[type="radio"] {
-    appearance: none;
+  appearance: none;
 }
 
-.radio-button.selected{
-    border: 4px solid lightgrey;
+.radio-button.selected {
+  border: 4px solid lightgrey;
 }
 
 /* cart.css */
 .color-swatches {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .color-swatch {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 2px solid lightgrey;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid lightgrey;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .color-swatch input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .color-swatch.selected {
-    border-color: black;
+  border-color: black;
 }
 
-.center{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-direction: row;
+.center {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
 }
 
-.center-cart{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.center-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quantity-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 6rem;
+  color: #212121da;
+  font-family: "Avenir Next", sans-serif;
+  font-size: 15.5px;
+}
+
+.quantity-container p {
+    color: #212121da;
+        font-family: "Avenir Next", sans-serif;
+        font-size: 15px;
+}
+
+.quantity-container button:hover{
+    cursor: pointer;
+}
+
+.quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 2.5rem;
+  border: 1.6px solid lightgrey;
+  margin: 0;
+  padding: 0;
+  color: #212121da;
+  font-family: "Avenir Next", sans-serif;
+  font-size: 15.5px;
+  margin-bottom: 6px;
+  /* margin-left: 2rem; */
+}
+
+.quantity button {
+  width: 2rem;
+  background-color: transparent;
+  border: none;
+  color: #212121da;
+  font-size: 22px;
+  font-family: "Avenir Next", sans-serif;
+}
+
+.numero {
+  border-left: 1.6px solid lightgrey;
+  border-right: 1.6px solid lightgrey;;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #212121da;
+  font-family: "Avenir Next", sans-serif;
+font-size: 15px;
+}
+
+.remove button{
+    background-color: transparent;
+    color: #212121da;
+    font-family: "Avenir Next", sans-serif;
+    border: none;
+    font-size: 12px;
+    border-bottom: 1px solid #212121da ;
+    margin-bottom: 5px;
+   margin-right: 3rem;
+letter-spacing: .045em;
+}
+
+.numbers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+  /* border: 1px solid blue; */
+  margin-right: 1rem;
+  color: #212121da;
+  font-family: "Avenir Next", sans-serif;
+}
+
+.details {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 1px solid black; */
+  height: auto;
+  color: #212121da;
+  font-family: "Avenir Next", sans-serif;
+  font-size: 15px;
+}
+
+.details p {
+  margin: 2px;
+}
+
+.cake-name {
+  font-family: "Monotype Bodoni", serif;
+  font-size: 20px;
+  padding-bottom: 15px;
+  color: #212121;
+}
+
+.iner-container-cart {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* border: 3px solid green; */
+  gap: 1rem;
+  border-top: 1px solid lightgrey;
+}
+
+.cart-left {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  margin-left: 3rem;
+  /* border: 2px solid orange; */
+  height: 10rem;
 }
 
 .cart-summary{
-    
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-end;
-    margin-right: 9rem;
+    margin-right: 3rem;
     margin-bottom: 6rem;
+    margin-top: 3rem;
+    width: 100%;
+}
+
+.cart-summary h2{
+    margin: 0;
+    font-family: "Monotype Bodoni", serif;
+    font-weight: 10;
+    color: #212121c6;
+}
+
+.cart-summary p{
+    color: #212121da;
+        font-family: "Avenir Next", sans-serif;
+        font-size: 15px;
+}
+
+.cart-summary button{
+background-color: rgba(250, 215, 220, 0.681);
+    border: none;
+    color: #212121da;
+    font-family: "Avenir Next", sans-serif;
+    letter-spacing: .085em;
+    height: 3rem;
+        width: 9rem;
+}
+
+.cart-summary button:hover{
+    cursor: pointer;
 }
