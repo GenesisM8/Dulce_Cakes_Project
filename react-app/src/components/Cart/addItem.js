@@ -6,7 +6,7 @@ import './cart.css';
 
 const AddCartItem = ({ cakeId, cake }) => {
   const dispatch = useDispatch();
-  const [size, setSize] = useState('');
+  const [size, setSize] = useState('Small');
   const [flavor, setFlavor] = useState('');
   const [cakeCharacter, setCakeCharacter] = useState('');
   const [glutenFree, setGlutenFree] = useState('Regular');
@@ -115,12 +115,12 @@ const AddCartItem = ({ cakeId, cake }) => {
     return null;
   }
 
-  const availableColors = ['white', 'pink', 'hotPink', 'plum', 'blueviolet', 'lightskyblue', 'dodgerBlue', 'turquoise', 'lightgreen', 'gold', 'coral', 'orangeRed', 'burlywood'];
-
+  // const availableColors = ['white', 'pink', 'hotPink', 'plum', 'blueviolet', 'lightskyblue', 'dodgerBlue', 'turquoise', 'lightgreen', 'gold', 'coral', 'orangeRed', 'burlywood'];
+  const availableColors = ['hotPink', 'pink', "white", 'plum',  'lightskyblue',  'lightgreen', 'gold', 'coral'];
   const renderCakeCharacterInput = () => {
     if (cake.category === 'letters' ) {
       return (
-        <label>
+        <label className='center'>
           Choice of letter(s): 
           <input
             type="text"
@@ -128,7 +128,8 @@ const AddCartItem = ({ cakeId, cake }) => {
             onChange={(e) => setCakeCharacter(e.target.value)}
             maxLength={3}
             required
-            placeholder='max 3 characters'
+            className='form-input'
+            placeholder='(Limit: 3 characters)'
             pattern="[A-Za-z]*"
             title="Please enter a valid letter."
             onInvalid={(e) => e.target.setCustomValidity('Please enter your desired letter.')}
@@ -140,7 +141,7 @@ const AddCartItem = ({ cakeId, cake }) => {
    
      else if (cake.category === 'numbers') {
       return (
-        <label>
+        <label className='center'>
           Choice of number: 
           <input
             type="text"
@@ -148,7 +149,8 @@ const AddCartItem = ({ cakeId, cake }) => {
             onChange={(e) => setCakeCharacter(e.target.value)}
             maxLength={2}
             required
-            placeholder='max 2 characters'
+            className='form-input'
+            placeholder='(Limit: 2 characters)'
             pattern="[0-9]*" 
             title="Please enter a valid number."
             onInvalid={(e) => e.target.setCustomValidity('Please enter your desired number.')}
@@ -168,18 +170,20 @@ const AddCartItem = ({ cakeId, cake }) => {
 
   return (
     <div className="form-container">
-      <form onSubmit={handleSubmit} className="form-container">
-        <p>${price}.00</p>
+      <form onSubmit={handleSubmit} className='custom-form' >
+        <h2>{cake.name}</h2>
+        <p className='price-form'>${price}.00</p>
         <label className='center'>
           Size:
           <select
             value={size}
             onChange={handleSizeChange}
             required
+            className='form-input'
             onInvalid={(e) => e.target.setCustomValidity('Please select a Size.')}
             onInput={(e) => e.target.setCustomValidity('')}
           >
-            <option value="">Select Size</option>
+            {/* <option value="">Select Size</option> */}
             <option value="Small">Small (8-10 servings)</option>
             <option value="Medium">Medium (15-18 servings)</option>
             <option value="Large">Large (20-25 servings)</option>
@@ -187,8 +191,8 @@ const AddCartItem = ({ cakeId, cake }) => {
         </label>
         {renderCakeCharacterInput()}
         {cake.category !== 'holiday' && (
-          <label>
-            <p>Please select up to 2 colors </p>
+          <label className='center'>
+            <p>Select up to 2 colors </p>
             <div className="color-swatches">
               {availableColors.map((colorOption) => (
                 <label
@@ -222,7 +226,8 @@ const AddCartItem = ({ cakeId, cake }) => {
               <input
                 type="text"
                 value={otherColor}
-                maxLength={50}
+                maxLength={30}
+                className='form-input'
                 onChange={handleOtherColorChange}
                 placeholder='Custom colors'
               />
@@ -231,7 +236,7 @@ const AddCartItem = ({ cakeId, cake }) => {
         <label className='center'>
         
           Cream Flavor:
-          <select value={flavor} onChange={handleFlavorChange} required>
+          <select value={flavor} onChange={handleFlavorChange} required className='form-input'>
             <option value="">Select Flavor</option>
             <option value="Vanilla">Vanilla</option>
             <option value="Chocolate">Chocolate</option>
@@ -268,21 +273,22 @@ const AddCartItem = ({ cakeId, cake }) => {
             </label>
           </div>
         </label>
-        <label >
+        <label className='center'>
          Design notes / Allergies if any
           <textarea
             type="text"
-            className="center"
+            className='notes'
+            placeholder='(Limit: 250 characters)'
             value={foodAllergens}
-            maxLength={50}
+            maxLength={250}
             onChange={(e) => setFoodAllergens(e.target.value)}
             cols='40'
-            rows='7'
+            rows='20'
             
           />
         </label>
 
-        <button type="submit">Add to Cart</button>
+        <button type="submit" className='add-cart'>ADD TO CART</button>
       </form>
     </div>
   );

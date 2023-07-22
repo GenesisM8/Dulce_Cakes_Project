@@ -8,6 +8,7 @@ import {
 } from "../../store/cart";
 import "./cart.css";
 
+
 const colorDisplayNames = {
   white: "White",
   pink: "Light Pink",
@@ -64,11 +65,13 @@ const Cart = () => {
   if (!cartItems || cartItems.length === 0 || !sessionUser) {
     return (
       <div className="center-cart">
+        
         <h2>Your Cart</h2>
         <p>Your cart is currently empty</p>
         <NavLink exact to="/cakes">
-          <p>Click here to continue shopping</p>
+          <p className="under-line">Click here to continue shopping</p>
         </NavLink>
+        
       </div>
     );
   }

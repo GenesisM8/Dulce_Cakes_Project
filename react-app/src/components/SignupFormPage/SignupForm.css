@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
 }
 
 .sign-form{
@@ -79,8 +79,9 @@ font-family: "Avenir Next", sans-serif;
 }
 
 .button-left:disabled{
-    background-color: rgba(250, 215, 220, 0.681);
-    color: #212121da;
+    /* background-color: rgba(250, 215, 220, 0.681); */
+    background-color: rgba(250, 215, 220, 0.24);
+    color: #21212185;
     border: none;
 }
 

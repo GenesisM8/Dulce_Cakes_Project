@@ -7,7 +7,9 @@
     justify-content: space-between;
     padding-left: 4em;
     padding-right: 4rem;
-    /* margin-top: 4rem; */
+   margin-bottom: 0;
+   margin-top: 2rem;
+   align-self: flex-end;
    
 }
 

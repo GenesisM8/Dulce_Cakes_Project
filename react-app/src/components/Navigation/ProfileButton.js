@@ -7,6 +7,7 @@ import SignupFormModal from "../SignupFormModal";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "./Navigation.css";
 import userImg from "../../assets/user.png"
+import Footer from "../Footer"
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -64,7 +65,7 @@ function ProfileButton({ user }) {
       <div className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-            
+            <div className="pink-border">
             <div>Hello, 
               <div>
                 {user.firstName} {user.lastName}</div>
@@ -73,10 +74,11 @@ function ProfileButton({ user }) {
             <div>
               <button onClick={handleLogout}>Log Out</button>
             </div>
+             </div>
           </>
         ) : (
           <>
-           <div>
+           <div className="user-buttons" >
               <button onClick={signupButton} >
                 Sign Up
               </button>
@@ -87,7 +89,9 @@ function ProfileButton({ user }) {
           </>
         )}
       </div>
+      
     </>
+   
   );
 }
 
