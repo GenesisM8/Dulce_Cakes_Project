@@ -41,7 +41,7 @@ const Reviews = () => {
         {postReviewButton(user) ? (
           <OpenModalButton
             
-            buttonText="Add new Review"
+            buttonText="Write a Review"
             modalComponent={<ReviewModal />}
           />
         ) : null}
@@ -57,20 +57,25 @@ const Reviews = () => {
                     {renderStarRating(review.rating)}
                   </div>
                   <p>{review.review}</p>
-                  {review.imageUrl ? (
+                  <div className="last-container">
+
+                           {review.imageUrl ? (
                     <img
                       src={review.imageUrl}
                       alt="img"
                       className="review-img"
                     />
                   ) : null}
-
+                  <div className="delete-review">
                   {deleteReviewButton(user, review) ? (
                     <OpenModalButton
-                      buttonText="Delete"
+                      buttonText= {<img src="https://icons.veryicon.com/png/o/miscellaneous/a-library-of-monochrome-icons/delete-730.png" alt="delete-icon"/>}
                       modalComponent={<DeleteReviewModal review={review} />}
                     />
                   ) : null}
+                  </div>
+                  </div>
+           
                 </div>
               </div>
             ))}

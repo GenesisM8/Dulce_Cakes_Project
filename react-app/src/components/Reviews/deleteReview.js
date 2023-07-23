@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {  deleteReviewThunk } from "../../store/reviews";
 import { useModal } from "../../context/Modal";
+import "./review.css"
 
 // import './DeleteReview.css'
 
@@ -28,7 +29,7 @@ const { closeModal } = useModal();
           <>
             <div className='mainContainer'>
                 <div className='deleteText'>
-                    <h1 className='h1Delete'>Confirm Delete</h1>
+                    <h2 className='h1Delete'>Confirm Delete</h2>
                     <p className='pDelete'>Are you sure you want to delete this review?</p>
                 </div>
                 <div>

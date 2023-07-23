@@ -1,9 +1,9 @@
 .rating-input .filled {
-    color: rgb(227, 126, 143);
+    color: goldenrod;
 }
 
 .rating-input .empty {
-    color: rgba(255, 172, 186, 0.463);
+    color: rgba(250, 215, 220, 0.565);
 
 }
 
@@ -13,29 +13,15 @@
     gap: 2px;
 }
 
-/* .reviewContainer {
-    width: 24rem;
-    height: 22rem;
-    padding: 1rem;
-    border: 4px solid  black;
-    border-radius: 15px;
-    font-family: sans-serif;
-}
-
-.reviewForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: sans-serif;
-} */
 
 .starsContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
-    padding: 1rem;
+    gap: 12px;
+   padding: 0;
+   margin: 0;
+
 }
 
 
@@ -44,31 +30,29 @@
     border-radius: 15px;
 }
 
-/* .error{
-    padding-bottom: 5px;
-   
-} */
-
-
-/* Review Modal CSS */
-
 
 .reviewContainer {
-    width: 25rem;
-    height: 22rem;
-    /* padding: 1rem; */
-   
+    width: 26rem;
+    height: 21rem;
     border-radius: 15px;
     font-family: sans-serif;
+    border: 3px solid lightgray;
+    color: #212121da;
+        font-family: "Avenir Next", sans-serif;
+      padding-left: 1rem;
+      padding-right: 1rem;
 }
 
 .reviewForm {
-    height: 22rem;
+    height: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
+    color: #212121da;
+        font-family: "Avenir Next", sans-serif;
+    
   
 }
 
@@ -77,32 +61,62 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    padding: 1rem;
+    cursor: pointer;
+
 }
 
 .submitReview {
-    width: 5rem;
-    height: 2rem;
-    color: white;
-    background-color: rgb(255, 137, 156);
-    /* box-shadow: 1px 1px 2px 1px black; */
-    font-size: 16px;
-    border-radius: 7px;
+background-color: rgba(250, 215, 220, 0.681);
+    border: none;
+    color: #212121da;
+    font-family: "Avenir Next", sans-serif;
+    letter-spacing: .065em;
+    cursor: pointer;
+    width: 10rem;
     margin-top: 10px;
-
+    width: 15rem;
+    height: 2.5rem;
 }
 
 *:disabled {
-    background-color: rgba(255, 172, 186, 0.717);
-    box-shadow: none;
-    color: rgba(255, 255, 255, 0.859)
+background-color: rgba(250, 215, 220, 0.681);
+    border: none;
+    color: #212121da;
+    font-family: "Avenir Next", sans-serif;
+    letter-spacing: .065em;
+    cursor: pointer;
+    width: 15rem;
 }
 
 #modal-content {
     border-radius: 15px;
 }
 
-/* .error {
-    padding-bottom: 5px;
 
-} */
+.signError {
+    color: #d32f2f;
+    font-family: "Avenir Next", sans-serif;
+   margin: 5px;
+   font-family: 10px;
+}
+
+.big-star i{
+height: 2rem;
+}
+
+.post-img{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    padding: 0;
+    height: 2rem;
+    align-items: center;
+    gap: 10px;
+}
+
+.img-input{
+    border: 1px solid lightgrey;
+    color: #212121da;
+    font-family: "Avenir Next", sans-serif;
+    outline: none;
+}

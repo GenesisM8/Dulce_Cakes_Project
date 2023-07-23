@@ -52,9 +52,9 @@ function ReviewModal() {
         <form className="reviewForm" onSubmit={handleSubmit}>
           {/* <h3>Tell us how we did</h3> */}
           {Boolean(Object.values(errors).length) && (
-            <div className="errorContainer">
+            <div>
               {Object.values(errors).map((errorMsg, index) => (
-                <p key={index} className="error">
+                <p key={index} className="signError">
                   {errorMsg}
                 </p>
               ))}
@@ -63,9 +63,11 @@ function ReviewModal() {
           <textarea
             cols="40"
             rows="7"
+            className="notes"
             placeholder="Leave your review here..."
             value={review}
             name="review"
+            maxLength={250}
             onChange={(e) => setReview(e.target.value)}
           ></textarea>
           <div className="starsContainer">
@@ -76,10 +78,11 @@ function ReviewModal() {
             />
             <p>Stars</p>
           </div>
-          <div>
-            <p>Post an Image (optional)</p>
+          <div className="post-img">
+            <p>Image (optional)</p>
             <input
               type="text"
+              className="img-input"
               placeholder="Image URL"
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
@@ -90,7 +93,7 @@ function ReviewModal() {
             className="submitReview"
             disabled={Boolean(Object.values(errors).length)}
           >
-            Submit
+            SUBMIT
           </button>
         </form>
       </div>
