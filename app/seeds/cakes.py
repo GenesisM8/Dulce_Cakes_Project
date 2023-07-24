@@ -467,45 +467,45 @@ def seed_cakes():
         imageUrl = "https://www.frudeco.com/wp-content/uploads/2023/06/Frudeco-June-44-e1687984284411.jpeg"
     )
 
-    cake47 = Cake(
-        name = "Engagement Ring Cake",
-        category = "shapes",
-        description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 89,
-        mediumPrice = 130,
-        largePrice = 180,
-        imageUrl = "https://scontent-atl3-2.xx.fbcdn.net/v/t1.6435-9/186480903_294035382384867_1046116594179791324_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a26aad&_nc_ohc=x8x2ehIRWRgAX96u6Oh&_nc_ht=scontent-atl3-2.xx&oh=00_AfDGEmehZXIVLciKVHhvjEkat7lSJ3r8wdkM_TGxSyKXXw&oe=64E576EA"
-    )
+    # cake47 = Cake(
+    #     name = "Engagement Ring Cake",
+    #     category = "shapes",
+    #     description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
+    #     smallPrice = 89,
+    #     mediumPrice = 130,
+    #     largePrice = 180,
+    #     imageUrl = "https://scontent-atl3-2.xx.fbcdn.net/v/t1.6435-9/186480903_294035382384867_1046116594179791324_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a26aad&_nc_ohc=x8x2ehIRWRgAX96u6Oh&_nc_ht=scontent-atl3-2.xx&oh=00_AfDGEmehZXIVLciKVHhvjEkat7lSJ3r8wdkM_TGxSyKXXw&oe=64E576EA"
+    # )
 
-    cake48 = Cake(
-        name = "Choco Cake",
-        category = "numbers",
-        description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 89,
-        mediumPrice = 130,
-        largePrice = 180,
-        imageUrl = "https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/241521917_403550974766640_7945642176790031050_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a26aad&_nc_ohc=SommWdLnal8AX-2H3lE&_nc_ht=scontent-atl3-2.xx&oh=00_AfC1pFwcenGbXUCD_UBkrvWbKtmDMYn8AtO14Qt55QdjIA&oe=64C3A93E"
-    )
+    # cake48 = Cake(
+    #     name = "Choco Cake",
+    #     category = "numbers",
+    #     description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
+    #     smallPrice = 89,
+    #     mediumPrice = 130,
+    #     largePrice = 180,
+    #     imageUrl = "https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/241521917_403550974766640_7945642176790031050_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=a26aad&_nc_ohc=SommWdLnal8AX-2H3lE&_nc_ht=scontent-atl3-2.xx&oh=00_AfC1pFwcenGbXUCD_UBkrvWbKtmDMYn8AtO14Qt55QdjIA&oe=64C3A93E"
+    # )
 
-    cake49 = Cake(
-        name = "Rose Gold",
-        category = "letters",
-        description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 89,
-        mediumPrice = 130,
-        largePrice = 180,
-        imageUrl = "https://scontent-atl3-2.xx.fbcdn.net/v/t1.6435-9/169337430_264776685310737_7837757207398418629_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=a26aad&_nc_ohc=jVXWWl5B7vwAX-fUS31&_nc_ht=scontent-atl3-2.xx&oh=00_AfAXg-B6xhd4w-nAFWWcmclL02nYJYDkWAwCVl0FpCd9Nw&oe=64E56D1C"
-    )
+    # cake49 = Cake(
+    #     name = "Rose Gold",
+    #     category = "letters",
+    #     description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
+    #     smallPrice = 89,
+    #     mediumPrice = 130,
+    #     largePrice = 180,
+    #     imageUrl = "https://scontent-atl3-2.xx.fbcdn.net/v/t1.6435-9/169337430_264776685310737_7837757207398418629_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=a26aad&_nc_ohc=jVXWWl5B7vwAX-fUS31&_nc_ht=scontent-atl3-2.xx&oh=00_AfAXg-B6xhd4w-nAFWWcmclL02nYJYDkWAwCVl0FpCd9Nw&oe=64E56D1C"
+    # )
 
-    cake50 = Cake(
-        name = "Number Cake",
-        category = "numbers",
-        description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
-        smallPrice = 89,
-        mediumPrice = 130,
-        largePrice = 180,
-        imageUrl = "https://scontent-atl3-1.xx.fbcdn.net/v/t1.6435-9/179967535_282651633523242_215702394379370101_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a26aad&_nc_ohc=xH-DKRMQRnMAX9p66oi&_nc_ht=scontent-atl3-1.xx&oh=00_AfA27YxDb54SU9po5-TjAbZoMdzqVgNHdmzxU3CV0vdbeg&oe=64E562EE"
-    )
+    # cake50 = Cake(
+    #     name = "Number Cake",
+    #     category = "numbers",
+    #     description = "Dulce's cakes are made of shortbread-almond tart with a creamy mascarpone frosting; As a result, a very light in flavor, different and extremely delicious cake perfect for any ocasion.", 
+    #     smallPrice = 89,
+    #     mediumPrice = 130,
+    #     largePrice = 180,
+    #     imageUrl = "https://scontent-atl3-1.xx.fbcdn.net/v/t1.6435-9/179967535_282651633523242_215702394379370101_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a26aad&_nc_ohc=xH-DKRMQRnMAX9p66oi&_nc_ht=scontent-atl3-1.xx&oh=00_AfA27YxDb54SU9po5-TjAbZoMdzqVgNHdmzxU3CV0vdbeg&oe=64E562EE"
+    # )
 
 
 
@@ -569,10 +569,10 @@ def seed_cakes():
     db.session.add(cake38)
     db.session.add(cake39)
     db.session.add(cake43)
-    db.session.add(cake47)
-    db.session.add(cake48)
-    db.session.add(cake49)
-    db.session.add(cake50)
+    # db.session.add(cake47)
+    # db.session.add(cake48)
+    # db.session.add(cake49)
+    # db.session.add(cake50)
 
     db.session.commit()
     
