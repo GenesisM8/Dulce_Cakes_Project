@@ -6,10 +6,10 @@ Hello there! This is Dulce Cakes, a website that lets you customize, purchase, a
 
 ## Built With
 
-React: https://react.dev/
-Redux: https://redux.js.org/
-SQAlchemy: https://www.sqlalchemy.org/
-Flask: https://flask.palletsprojects.com/en/2.3.x/
+* React: https://react.dev/
+* Redux: https://redux.js.org/
+* SQAlchemy: https://www.sqlalchemy.org/
+* Flask: https://flask.palletsprojects.com/en/2.3.x/
 
 
 
