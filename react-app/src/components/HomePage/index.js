@@ -4,8 +4,8 @@ import './homePage.css'
 
 const HomePage = () => {
     const images = [
-        "https://www.frudeco.com/wp-content/uploads/2023/03/Frudeco-Feb-04-22.jpg",
         "https://www.frudeco.com/wp-content/uploads/2023/02/Frudeco-Feb-15-scaled.jpg",
+        "https://www.frudeco.com/wp-content/uploads/2023/03/Frudeco-Feb-04-22.jpg",
         "https://www.frudeco.com/wp-content/uploads/2019/03/DSC00221-scaled.jpg"
     ];
 

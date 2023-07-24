@@ -11,9 +11,12 @@
 }
 
 .cake-img {
-  width: 16rem;
-  height: 15rem;
+  width: 18rem;
+  height: 14rem;
+  object-fit:cover;
+  overflow: hidden;
    transition: transform 0.3s ease;
+
 }
 
 .single-cake-img {
@@ -32,8 +35,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-    color: #212121da;
-      font-family: "Avenir Next", sans-serif;
+  color: #212121da;
+  font-family: "Avenir Next", sans-serif;
   /* border: 2px solid green; */
   
 }
