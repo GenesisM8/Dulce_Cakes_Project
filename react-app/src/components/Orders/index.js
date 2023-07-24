@@ -4,11 +4,12 @@ import './orders.css'
 
 const Orders = () => {
   return (
-    <div className="center-orders">
+    <div className="center-cart">
       <h2>Thank You for your oder</h2>
 
       <NavLink exact to="/cakes">
-        Click here to continue shopping
+        <p className="under-line">Click here to continue shopping
+          </p>
       </NavLink>
     </div>
   );

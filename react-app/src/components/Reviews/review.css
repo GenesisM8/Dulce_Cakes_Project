@@ -15,7 +15,7 @@
 
 .single-review-container {
   width: 33rem;
-  height: 20;
+  height: 19rem;
   text-align: justify;
   border: 1px solid lightgray;
   padding: 20px;
@@ -103,7 +103,7 @@
 }
 
 .delete-review img {
-  height: 1.7rem;
+  height: 1.5rem;
   background-color: white;
   cursor: pointer;
 }

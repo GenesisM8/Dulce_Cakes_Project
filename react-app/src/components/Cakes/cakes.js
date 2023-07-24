@@ -17,13 +17,14 @@ const AllCakes = () => {
 
     <div className="all-cakes-container">
       <p className="all-cakes-text">
-        Introducing our signature collection. Each design can be uniquely customized to suit your preferences, from size and flavor to color. Explore our delightful range and find the perfect cake to make your moments truly unforgettable. 
+        Introducing our Signature Collection. Each design can be uniquely customized to suit your preferences, from size and flavor to color. Explore our delightful range and find the perfect cake to make your moments truly unforgettable. 
       </p>
         <div className="main-cakes-container">
       {cakes.map((cake) => (
-        <div key={cake.id}>
+        <div key={cake.id} className="single-cake-home">
           <NavLink to={`/cakes/${cake.id}`}>
             <img src={cake.imageUrl} alt="Cake" className="cake-img" />
+            <p>{cake.name}</p>
           </NavLink>
         </div>
       ))}
