@@ -1,10 +1,10 @@
 # Dulce Cakes
 
-# OverView
+## OverView
 
 Hello there! This is Dulce Cakes, a website that lets you customize, purchase, and review cakes .
 
-# Built With
+## Built With
 
 React: https://react.dev/
 Redux: https://redux.js.org/
