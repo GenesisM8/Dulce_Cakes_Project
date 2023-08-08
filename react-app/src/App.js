@@ -16,6 +16,7 @@ import HomePage from "./components/HomePage";
 import Reviews from "./components/Reviews";
 import Orders from "./components/Orders";
 import Footer from "./components/Footer";
+import Favorites from "./components/Favorites";
 
 
 function App() {
@@ -65,6 +66,9 @@ function App() {
         </Route>
          <Route exact path="/orders">
           <Orders/>
+        </Route>
+        <Route exact path="/favorites">
+          <Favorites/>
         </Route>
         </Switch>
       )}
