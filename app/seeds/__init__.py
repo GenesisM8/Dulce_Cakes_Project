@@ -23,6 +23,7 @@ def seed():
     seed_users()
     seed_cakes()
     seed_reviews()
+
     # Add other seed functions here
 
 

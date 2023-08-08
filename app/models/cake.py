@@ -1,4 +1,5 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
+from .favorite import favorites
 
 class Cake(db.Model):
     __tablename__= 'cakes'
@@ -16,7 +17,12 @@ class Cake(db.Model):
     imageUrl = db.Column(db.String(255), nullable=False)
 
     cartitems = db.relationship("Cartitem", back_populates='cakes', cascade="all, delete")
-    
+    cake_favorites = db.relationship(
+        "User",
+        secondary=favorites,
+        back_populates="user_favorites",
+        cascade="delete, all"
+    )
 
     
     def to_dict(self):
@@ -28,5 +34,13 @@ class Cake(db.Model):
             'smallPrice': self.smallPrice,
             'mediumPrice': self.mediumPrice,
             'largePrice': self.largePrice,
+            'imageUrl': self.imageUrl
+        }
+    
+    def to_dict_fav(self):
+        return {
+            "id":self.id,
+            'name': self.name,
+            'category': self.category,
             'imageUrl': self.imageUrl
         }

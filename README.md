@@ -2,7 +2,11 @@
 
 ## OverView
 
-Hello there! This is Dulce Cakes, a website that lets you customize, purchase, and review cakes .
+Welcome to Dulce Cakes, an E-commerce app that allows you to customize, order, and share reviews for a unique cake experience. As the owner of this business, I have invested my passion and skills in creating this platform, making the cake website I always envisioned during my cake-selling days. Its current functionality includes the following features:
+
+* Signing up a new user and logging in as an existing user
+
+
 
 ## Built With
 
