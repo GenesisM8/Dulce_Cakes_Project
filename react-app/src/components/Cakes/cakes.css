@@ -48,6 +48,7 @@
     margin: 10px;
       color: #212121da;
         font-family: "Avenir Next", sans-serif;
+        position: relative;
 }
 
 
@@ -115,3 +116,95 @@
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
+
+
+.heart-icon {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+  cursor: pointer;
+  font-size: 25px;
+  color: white;
+  transition: color 0.3s, transform 0.3s; /* Added transition for transform */
+}
+
+.heart-icon.favorite {
+  color: red;
+  cursor: pointer;
+  transform: scale(1.2); /* Added initial zoom effect for favorite */
+}
+
+.heart-icon.zoom-animation {
+  animation: zoomInOut 0.3s ease-in-out; /* Keyframe animation for zoom */
+}
+
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1); /* Normal size */
+  }
+  25%, 75% {
+    transform: scale(1.5); /* Zoom out */
+  }
+  50% {
+    transform: scale(0.8); /* Zoom in */
+  }
+}
+
+.heart-icon:hover {
+  transform: scale(1.2); /* Apply zoom effect on hover */
+}
+
+.heart-icon.favorite:hover {
+  transform: scale(1); /* Apply original size on hover for favorite */
+}
+
+.cake-img-container {
+  position: relative;
+  display: inline-block;
+}
+
+
+.heart-icon {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
+  cursor: pointer;
+  font-size: 25px;
+  color: white;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.heart-icon.favorite {
+  color: red;
+  cursor: pointer;
+  transform: scale(1);
+}
+
+.heart-icon.zoom-animation {
+  animation: zoomInOut 0.3s ease-in-out;
+}
+
+@keyframes zoomInOut {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  25%,
+  75% {
+    transform: scale(1.5);
+  }
+
+  50% {
+    transform: scale(0.8);
+  }
+}
+
+.cake-img-container {
+  position: relative;
+  display: inline-block;
+}
+
