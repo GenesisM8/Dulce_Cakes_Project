@@ -4,7 +4,7 @@ import { logout } from "../../store/session";
 import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { NavLink, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "./Navigation.css";
 import userImg from "../../assets/user.png"
 import Footer from "../Footer"
@@ -73,6 +73,11 @@ function ProfileButton({ user }) {
               
             <div>
               <button onClick={handleLogout}>Log Out</button>
+            </div>
+            <div>
+              <NavLink exact to="/favorites">
+                <button>Favorites</button>
+              </NavLink>
             </div>
              </div>
           </>

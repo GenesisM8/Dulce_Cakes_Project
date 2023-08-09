@@ -12,16 +12,26 @@ export default function Favorites() {
     history.push("/");
   }
 
+  const favoriteCakes = userInfo && userInfo.favorites;
+
   return (
     <div>
-      <h1>Your Favorites Here</h1>
-      {Object.keys(userInfo.favorites).map((cakeId) => (
-        <div key={cakeId}>
-          <h3>{userInfo.favorites[cakeId].name}</h3>
-          <img src={userInfo.favorites[cakeId].imageUrl} alt={userInfo.favorites[cakeId].name} />
-        </div>
-      ))}
+      <h1>Your Favorites</h1>
+      {favoriteCakes && Object.keys(favoriteCakes).length > 0 ? (
+        Object.keys(favoriteCakes).map((cakeId) => (
+          <div key={cakeId}>
+            <h3>{favoriteCakes[cakeId].name}</h3>
+            <img
+              src={favoriteCakes[cakeId].imageUrl}
+              alt={favoriteCakes[cakeId].name}
+            />
+          </div>
+        ))
+      ) : (
+        <p>You don't have any favorites yet.</p>
+      )}
     </div>
   );
 }
+
 
