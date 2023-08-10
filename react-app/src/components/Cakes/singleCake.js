@@ -3,16 +3,41 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { thunkGetSingleCake } from "../../store/cakes";
 import AddCartItem from "../Cart/addItem";
+import { useHistory } from "react-router-dom";
+import { thunkAddFav, thunkDeleteFav } from "../../store/session";
 import "./cakes.css"
 
 const SingleCake = () => {
   const { cakeId } = useParams();
   const dispatch = useDispatch();
   const cake = useSelector((state) => state.cakes.selectedCake);
+    const history = useHistory();
+  let userInfo = useSelector((state) => state.session.user);
 
   useEffect(() => {
     dispatch(thunkGetSingleCake(cakeId));
   }, [dispatch, cakeId]);
+
+    const handleToggleFavorite = async () => {
+    if (!userInfo) {
+      history.push("/login"); // Redirect to login page if not logged in
+      return;
+    }
+
+    const cakeIsFavorite = !!userInfo.favorites[cakeId];
+
+    if (cakeIsFavorite) {
+      // Remove cake from favorites
+      await dispatch(thunkDeleteFav(cakeId));
+    } else {
+      // Add cake to favorites
+      await dispatch(thunkAddFav(cakeId));
+    }
+  };
+
+   const isFavorite = (cakeId) => {
+    return userInfo && userInfo.favorites && userInfo.favorites[cakeId];
+  };
 
   if (!cake) return null;
 
@@ -37,15 +62,27 @@ const SingleCake = () => {
  
  </div>
 
-      <div className="img-container2">
-        <img src={cake.imageUrl} alt="Cake" className="single-cake-img" />
-      </div>
-<div className="custom-container">
+     <div className="img-container2">
+  <div className="cake-img-container">
+    <img src={cake.imageUrl} alt="Cake" className="single-cake-img" />
+    <i
+      className={`${
+        isFavorite(cake.id)
+          ? "fa-solid fa-heart heart-icon favorite"
+          : "fa-regular fa-heart heart-icon not-favorite"
+      }`}
+      onClick={(e) => {
+        e.preventDefault();
+        handleToggleFavorite();
+      }}
+    ></i>
+  </div>
+</div>
+      <div className="custom-container">
         <div>
           <AddCartItem cakeId={cake.id} cake={cake} />
         </div>
       </div>
-     
     </div>
   );
 };

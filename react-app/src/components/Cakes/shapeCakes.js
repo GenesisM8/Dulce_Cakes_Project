@@ -51,8 +51,10 @@ const ShapeCakes = () => {
        <div key={cake.id} className="single-cake-home">
     <div className="cake-img-container">
       <i
-        className={`fa-solid fa-heart heart-icon ${
-          isFavorite(cake.id) ? "favorite" : ""
+       className={`${
+                  isFavorite(cake.id)
+                    ? "fa-solid fa-heart heart-icon favorite"
+                    : "fa-regular fa-heart heart-icon not-favorite"
         }`}
         onClick={(e) => {
           e.preventDefault(); // Prevent the NavLink behavior

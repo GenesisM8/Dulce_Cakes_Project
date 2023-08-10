@@ -1,0 +1,23 @@
+.all-cakes-container h1 {
+  font-family: "Monotype Bodoni", serif;
+  font-weight: 10;
+  color: #212121da;
+  font-size: 27px;
+  letter-spacing: 0.055em;
+  margin-top: 2rem;
+}
+
+.favorites-container {
+  height: 100%;
+}
+
+.no-favorites {
+  color: #212121da;
+  font-family: "Avenir Next", sans-serif;
+  font-size: 17px;
+  margin-top: -2rem;
+}
+
+.center-cart{
+    height: 100%;
+}

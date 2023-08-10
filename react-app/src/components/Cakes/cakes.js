@@ -39,30 +39,32 @@ const AllCakes = () => {
 
 
   return (
-  <div className="all-cakes-container">
+       <div className="all-cakes-container">
       <p className="all-cakes-text">
         Introducing our Signature Collection. Each design can be uniquely customized to suit your preferences, from size and flavor to color. Explore our delightful range and find the perfect cake to make your moments truly unforgettable.
       </p>
       <div className="main-cakes-container">
-    {cakes.map((cake) => (
-  <div key={cake.id} className="single-cake-home">
-    <div className="cake-img-container">
-      <i
-        className={`fa-solid fa-heart heart-icon ${
-          isFavorite(cake.id) ? "favorite" : ""
-        }`}
-        onClick={(e) => {
-          e.preventDefault(); // Prevent the NavLink behavior
-          handleToggleFavorite(cake.id);
-        }}
-      ></i>
-      <NavLink to={`/cakes/${cake.id}`}>
-        <img src={cake.imageUrl} alt="Cake" className="cake-img" />
-      </NavLink>
-    </div>
-    <p>{cake.name}</p>
-  </div>
-))}
+        {cakes.map((cake) => (
+          <div key={cake.id} className="single-cake-home">
+            <div className="cake-img-container">
+              <i
+                className={`${
+                  isFavorite(cake.id)
+                    ? "fa-solid fa-heart heart-icon favorite"
+                    : "fa-regular fa-heart heart-icon not-favorite"
+                }`}
+                onClick={(e) => {
+                  e.preventDefault(); // Prevent the NavLink behavior
+                  handleToggleFavorite(cake.id);
+                }}
+              ></i>
+              <NavLink to={`/cakes/${cake.id}`}>
+                <img src={cake.imageUrl} alt="Cake" className="cake-img" />
+              </NavLink>
+            </div>
+            <p>{cake.name}</p>
+          </div>
+        ))}
       </div>
     </div>
   
