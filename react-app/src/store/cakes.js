@@ -28,7 +28,7 @@ export const thunkGetSingleCake = (cakeId) => async (dispatch) => {
       dispatch(getSingleCake(data.cake_info));
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
 

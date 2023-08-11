@@ -30,7 +30,7 @@ export const getReviewsThunk = () => async (dispatch) => {
   const res = await fetch(`/api/reviews`);
   if (res.ok) {
     const reviewRes = await res.json();
-    console.log(reviewRes); // Log the response to see what you are getting
+    // console.log(reviewRes); // Log the response to see what you are getting
     let reviews = reviewRes.cake_reviews;
     dispatch(getReviewsAction(reviews));
     return reviews;
