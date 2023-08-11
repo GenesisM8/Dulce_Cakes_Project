@@ -15,7 +15,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(100), nullable=False, unique=True)
     firstName = db.Column(db.String(50), nullable=False)
     lastName = db.Column(db.String(50), nullable=False)
-    hashed_password = db.Column(db.String(50), nullable=False)
+    hashed_password = db.Column(db.String(300), nullable=False)
 
     cartitems = db.relationship("Cartitem", back_populates="users", cascade="all, delete")
     reviews = db.relationship("Review", back_populates="users", cascade="all, delete") 
