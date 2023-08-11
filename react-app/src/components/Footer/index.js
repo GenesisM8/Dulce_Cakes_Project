@@ -9,8 +9,8 @@ function Footer() {
         
       </div>
       <div>
-        <a href="https://github.com/GenesisM8">
-            <img className="git" alt="github icon" src="https://be-leaf.s3.amazonaws.com/github-icon.png"></img>
+        <a href="https://github.com/GenesisM8" target="_blank" rel="noopener noreferrer">
+            <img className="git" alt="github icon" src="https://be-leaf.s3.amazonaws.com/github-icon.png" ></img>
         </a>
         
       </div>
