@@ -59,7 +59,6 @@ function ProfileButton({ user }) {
   return (
     <>
       <button onClick={openMenu} className="profile-button">
-       {/* <i className="fa fa-user "></i> */}
        <img src={userImg} alt="user-icon" className="profile-icon"/>
       </button>
       <div className={ulClassName} ref={ulRef}>
@@ -91,6 +90,7 @@ function ProfileButton({ user }) {
                 Log in
               </button>
             </div>
+
           </>
         )}
       </div>

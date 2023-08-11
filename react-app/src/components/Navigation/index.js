@@ -29,10 +29,18 @@ function Navigation({ isLoaded }) {
 				</NavLink>
                 
                 <div className='icons'>
-                    {isLoaded && (
-                        <div className='move-left'>
-                            <ProfileButton user={sessionUser} className="profile-icon" />
-                        </div>
+                   {isLoaded && (
+            <div className='move-left'>
+              {sessionUser ? (
+                <NavLink exact to="/account" className="profile-icon">
+                  <i className="fa-regular fa-user"></i>
+                </NavLink>
+              ) : (
+                <NavLink exact to="/login" className="profile-icon">
+                  <i className="fa-regular fa-user"></i>
+                </NavLink>
+              )}
+            </div>
                     )}
 
                      <div>
