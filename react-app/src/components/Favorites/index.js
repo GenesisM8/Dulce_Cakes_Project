@@ -72,7 +72,7 @@ export default function Favorites() {
           </div>
         ))
       ) : (
-        <p className="no-favorites">(Your favorites list is currently empty.)</p>
+        <p className="no-favorites">(Your favorites list is currently empty)</p>
       )}
       </div>
     </div>

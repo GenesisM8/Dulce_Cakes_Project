@@ -16,7 +16,6 @@ import HomePage from "./components/HomePage";
 import Reviews from "./components/Reviews";
 import Orders from "./components/Orders";
 import Footer from "./components/Footer";
-import Favorites from "./components/Favorites";
 import MyAccount from "./components/MyAccount";
 
 
@@ -67,9 +66,6 @@ function App() {
         </Route>
          <Route exact path="/orders">
           <Orders/>
-        </Route>
-        <Route exact path="/favorites">
-          <Favorites/>
         </Route>
         <Route exact path="/account">
           <MyAccount/>
