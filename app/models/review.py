@@ -11,7 +11,7 @@ class Review(db.Model):
     userId = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
     rating = db.Column(db.Integer, nullable=False)
     review = db.Column(db.String(250), nullable=False)
-    imageUrl = db.Column(db.String(150), nullable=False)
+    imageUrl = db.Column(db.String(300), nullable=False)
     createdAt = db.Column(db.DateTime, default=db.func.now())
 
     users = db.relationship("User", back_populates="reviews")
