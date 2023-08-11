@@ -41,9 +41,9 @@ export default function Favorites() {
     <div className="favorites-container">
 
     
-    <div className="all-cakes-container">
-      <h1>Your Favorites</h1>
-      <div className="main-cakes-container">
+    <div>
+      {/* <h1>Your Favorites</h1> */}
+      <div className="main-cakes-container2">
             {favoriteCakes && Object.keys(favoriteCakes).length > 0 ? (
         Object.keys(favoriteCakes).map((cakeId) => (
           <div key={cakeId} className="single-cake-home">
@@ -51,8 +51,8 @@ export default function Favorites() {
                <i
                 className={`${
                   isFavorite(cakeId)
-                    ? "fa-solid fa-heart heart-icon favorite"
-                    : "fa-regular fa-heart heart-icon not-favorite"
+                    ? "fa-solid fa-heart heart-icon-fav favorite"
+                    : "fa-regular fa-heart heart-icon-fav not-favorite"
                 }`}
                 onClick={(e) => {
                   e.preventDefault(); // Prevent the NavLink behavior
@@ -63,17 +63,16 @@ export default function Favorites() {
                  <img
               alt={favoriteCakes[cakeId].name}
               src={favoriteCakes[cakeId].imageUrl}
-              className="cake-img"
+              className="cake-img-fav"
             />
               </NavLink>
-            
-            <p>{favoriteCakes[cakeId].name}</p>
+      
             </div>
            
           </div>
         ))
       ) : (
-        <p className="no-favorites">Your favorites list is currently empty.</p>
+        <p className="no-favorites">(Your favorites list is currently empty.)</p>
       )}
       </div>
     </div>

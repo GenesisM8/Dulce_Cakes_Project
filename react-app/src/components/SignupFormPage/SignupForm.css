@@ -55,6 +55,7 @@
     align-items: center;
     gap: 15px;
     padding-top: 5px;
+    cursor: pointer;
 }
 
 .sign-buttons button{
@@ -68,6 +69,7 @@ border: none;
 color: #212121da;
 font-family: "Avenir Next", sans-serif;
 letter-spacing: .065em;
+cursor: pointer;
 }
 
 .button-right{

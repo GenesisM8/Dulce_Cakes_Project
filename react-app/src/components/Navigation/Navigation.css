@@ -127,8 +127,8 @@ a{
 
 
 .fa-user  {
-  font-size: 24px; 
-  color: rgba(0, 0, 0, 0.578)
+  font-size: 26px; 
+  color: rgb(165, 161, 161);
 
 }
 
@@ -250,4 +250,52 @@ body{
   /* border: 3px solid yellow; */
   height: 100%;
   width: 100%;
+}
+
+
+.main-account{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+}
+
+.main-account2{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+}
+
+.main-account2 h2{
+    font-family: "Monotype Bodoni", serif;
+    font-weight: 10;
+    color: #212121;
+}
+
+.main-account-body{
+  margin-left: 20rem;
+ margin-top: 2rem;
+    color: #212121da;
+      font-family: "Avenir Next", sans-serif;
+      font-size: 16px;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+html{
+  height: 80%;
+}
+
+.main-account h4{
+font-family: "Monotype Bodoni", serif;
+  font-weight: 10;
+  font-size: 19px;
+  color: #212121;
+ margin-top: 0;
+ margin-bottom: 0;
+
 }

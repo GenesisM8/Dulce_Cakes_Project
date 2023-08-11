@@ -91,9 +91,8 @@ const Cart = () => {
         <p>TOTAL</p>
       </div>
       <div className="iner-container-cart">
-        <div> </div>
-        {cartItems.map((item) => (
-          <div key={item.id} className="single-cart-item-container" >
+        {cartItems.map((item, index) => (
+          <div key={`${item.id}-${index}`} className="single-cart-item-container" >
             {item.cake && (
               <> 
                   <div className="cart-left" >

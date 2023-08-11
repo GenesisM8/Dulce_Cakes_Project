@@ -3,6 +3,7 @@ import { NavLink, useHistory} from "react-router-dom/cjs/react-router-dom.min";
 import { useSelector } from 'react-redux';
 import { logout } from "../../store/session";
 import { useDispatch } from "react-redux";
+import Favorites from "../Favorites";
 
 
 
@@ -18,16 +19,25 @@ const history = useHistory();
   };
 
   return (
-    <div className="center-cart">
-      <h2>My Account</h2>
-        <div>
-            {sessionUser.firstName} {sessionUser.lastName}<br></br>
-            {sessionUser.email}
+    <div className="main-account">
+        <div className="main-account2">
+          <h2>My Account</h2>   
         </div>
-      <NavLink exact to="/favorites">
-        <p>Favorites</p>
-      </NavLink>
-        <button onClick={handleLogout}>Log Out</button>
+        <div className="main-account-body">
+      <div>
+            <p>
+             Hello, {sessionUser.firstName} {sessionUser.lastName} 
+            </p>
+            <p>
+             {sessionUser.email}   
+            </p>
+        </div>
+        <h4> Your Favorites</h4>
+        <Favorites></Favorites>
+      <div className="sign-buttons">
+        <button onClick={handleLogout} className="button-left">Log Out</button>
+      </div>
+        </div>
     </div>
   );
 };
