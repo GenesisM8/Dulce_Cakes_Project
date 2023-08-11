@@ -111,7 +111,7 @@ margin-top: 5px;
   align-items: center;
   justify-content: flex-end;
   right: 8rem;
-  margin-top: 15.2rem;
+  margin-top: 14.6rem;
   /* gap: 5px; */
   height:10rem;
   /* padding-right: 5rem;
@@ -225,6 +225,7 @@ color: lightgrey;
     position: absolute;
       z-index: 999;
     margin-left: 10px;
+
     /* padding-top: 5rem; */
     /* padding-left: 17rem; */
 }
