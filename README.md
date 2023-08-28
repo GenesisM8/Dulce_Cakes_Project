@@ -54,4 +54,12 @@ Running the frontend server:
 ## User's Account, and Favorites List
 ![users-page](https://github.com/GenesisM8/Dulce_Cakes_Project/blob/main/public/images/account.png?raw=true)
 
+## Database Schema
+![schema-page](https://github.com/GenesisM8/Dulce_Cakes_Project/blob/main/public/images/schema.png?raw=true)
+
+# Contact
+
+* Genesis Mendes:
+    * Genesismendes1@gmail.com
+    * LinkedIn: https://www.linkedin.com/in/genesis-mendes-8605a0263/
 
