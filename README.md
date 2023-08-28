@@ -40,7 +40,7 @@ Running the frontend server:
 # Images:
 
 ## Landing Page
-![landing-page](https://files.slack.com/files-pri/T03GU501J-F05PBAPS3HV/screen_shot_2023-08-27_at_11.02.18_pm.png)
+![landing-page](https://github.com/GenesisM8/Dulce_Cakes_Project/blob/main/public/images/ScreenShot2.png?raw=true)
 
 ## Cakes Index 
 
