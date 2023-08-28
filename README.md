@@ -40,14 +40,18 @@ Running the frontend server:
 # Images:
 
 ## Landing Page
-![landing-page](https://github.com/GenesisM8/Dulce_Cakes_Project/blob/main/public/images/ScreenShot2.png?raw=true)
+![landing-page](https://github.com/GenesisM8/Dulce_Cakes_Project/blob/main/public/images/landing.png?raw=true)
 
 ## Cakes Index 
+![index-page](https://github.com/GenesisM8/Dulce_Cakes_Project/blob/main/public/images/index.png?raw=true)
 
 ## Single Cake's Page, and Customization Form
+![single-cake-page](https://github.com/GenesisM8/Dulce_Cakes_Project/blob/main/public/images/single-page.png?raw=true)
 
 ## Shopping Cart
+![cart-page](https://github.com/GenesisM8/Dulce_Cakes_Project/blob/main/public/images/shopping-cart.png?raw=true)
 
 ## User's Account, and Favorites List
+![users-page](https://github.com/GenesisM8/Dulce_Cakes_Project/blob/main/public/images/account.png?raw=true)
 
 
