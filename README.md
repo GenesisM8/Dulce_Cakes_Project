@@ -1,10 +1,18 @@
 # Dulce Cakes
 
+To explore Dulce Cakes in action, visit the live site at: https://dulce-cakes.onrender.com
+
 ## OverView
 
 Welcome to Dulce Cakes, an E-commerce app that allows you to customize, order, and share reviews for a unique cake experience. As the owner of this business, I have invested my passion and skills in creating this platform, making the cake website I always envisioned during my cake-selling days. Its current functionality includes the following features:
 
 * Signing up a new user and logging in as an existing user
+* Browsing cakes by category
+* Customizing cakes to your preferences
+* Adding, Updating, Removing, cakes to the shopping cart
+* Creating and Deleting reviews of the logged in user
+* Adding, and Removing Cakes to favorite list
+
 
 
 
@@ -16,5 +24,30 @@ Welcome to Dulce Cakes, an E-commerce app that allows you to customize, order, a
 * Flask: https://flask.palletsprojects.com/en/2.3.x/
 
 
+## Launching locally instructions:
+Running the backend server:
+* From the root directory, run "pipenv install -r requirements.txt" to install dependencies
+* Run "pipenv shell" to run the virtual environment
+* Run "flask db upgrade" to create a local database
+* Run "flask seed all" to populate the database with seed data
+* Run "flask run" to boot up the backend server
 
-To explore Dulce Cakes in action, visit the live site at: https://dulce-cakes.onrender.com
+Running the frontend server:
+* From the root directory, cd into the react-app directory/folder
+* Run "npm install" to install dependencies
+* Run "npm start" to boot up the frontend server and open a browser tab to the landing page
+
+# Images:
+
+## Landing Page
+![landing-page](https://files.slack.com/files-pri/T03GU501J-F05PBAPS3HV/screen_shot_2023-08-27_at_11.02.18_pm.png)
+
+## Cakes Index 
+
+## Single Cake's Page, and Customization Form
+
+## Shopping Cart
+
+## User's Account, and Favorites List
+
+
