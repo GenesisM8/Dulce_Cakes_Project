@@ -13,8 +13,7 @@ def get_all_cart_items():
     user = current_user
     cart_items = Cartitem.query.filter(Cartitem.userId == user.id).all()
 
-
-    # Eager load the cake details for each cart item
+    # Eager load (fetch) the cake details for each cart item
     cake_ids = [item.cakeId for item in cart_items]
     cakes = Cake.query.filter(Cake.id.in_(cake_ids)).all()
     cake_dict = {cake.id: cake.to_dict() for cake in cakes}

@@ -1,3 +1,4 @@
+# This file is a special file in Python, used to initialize and configure the Flask application.
 import os
 from flask import Flask, render_template, request, session, redirect
 from flask_cors import CORS

@@ -24,7 +24,7 @@ class Cake(db.Model):
         cascade="delete, all"
     )
 
-    
+    # to_dict() converts a 'Cake' object into a dictionary with selected attributes  
     def to_dict(self):
         return {
             'id': self.id,

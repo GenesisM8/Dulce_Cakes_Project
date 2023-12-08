@@ -1,3 +1,8 @@
+//file defines actions, action creators, thunks, and a reducer 
+// for managing cake-related state in a Redux store.
+// The Redux store helps manage the state of the application
+// Thunks are used for handling asynchronous actions, such as fetching data from an API.
+
 const GET_CAKES = 'cakes/GET_CAKES';
 const GET_SINGLE_CAKE = 'cakes/GET_SINGLE_CAKE';
 
@@ -37,6 +42,8 @@ const initialState = {
   selectedCake: null
 };
 
+// The reducer is a pure function that takes the current state and an action 
+// as arguments and returns a new state. It contains a switch statement that handles different action types.
 export default function cakesReducer(state = initialState, action) {
   switch (action.type) {
     case GET_CAKES:
